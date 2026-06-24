@@ -169,10 +169,22 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop
 
 /* COLLECTION POSTERS */
 .collection-section{padding:52px 24px;background:#fff}
-.collection-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
-.collection-card{border-radius:16px;overflow:hidden;border:0.5px solid #e0e0e5;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s}
+.collection-slider{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:12px;margin-top:24px;scrollbar-width:none}
+.collection-slider::-webkit-scrollbar{display:none}
+.collection-card{flex:0 0 calc(50% - 7px);scroll-snap-align:start;border-radius:16px;overflow:hidden;border:0.5px solid #e0e0e5;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s}
+@media(max-width:600px){.collection-card{flex:0 0 80%}}
 .collection-card:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(29,116,200,0.15)}
 .collection-card img{width:100%;display:block;object-fit:cover}
+.slider-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+.slider-dot{width:6px;height:6px;border-radius:50%;background:#d2d2d7;cursor:pointer;transition:all 0.2s}
+.slider-dot.active{background:#1d74c8;width:18px;border-radius:4px}
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:20px}
+.lightbox.open{display:flex}
+.lightbox img{max-width:100%;max-height:90vh;border-radius:12px;object-fit:contain}
+.lightbox-close{position:fixed;top:16px;right:16px;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:24px;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox-prev,.lightbox-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:24px;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox-prev{left:12px}
+.lightbox-next{right:12px}
 
 /* PROMISE */
 .promise-section{background:#f5f5f7;padding:52px 24px}
@@ -435,7 +447,7 @@ footer a{color:#4da3e8;text-decoration:none}
     <div style="padding:0 24px">
       <div class="section-eyebrow">สินค้าและบริการ</div>
       <div class="section-title">เลือกดูได้เลย</div>
-      <div class="section-sub">กดที่การ์ดเพื่อดูรายละเอียดเพิ่มเติม 👆</div>
+      <div class="section-sub">กดที่การ์ดเพื่อดูรายละเอียดเพิ่มเติม 👇</div>
     </div>
   </div>
   <div class="tab-nav">
@@ -453,8 +465,8 @@ footer a{color:#4da3e8;text-decoration:none}
     <div class="product-grid">
       <div class="product-card" onclick="openModal('canon_g2010')"><img class="product-img" src="images/canon_g2010.jpg" alt="Canon G2010" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">PIXMA G2010</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
       <div class="product-card" onclick="openModal('canon_g3010')"><img class="product-img" src="images/canon_g3010.jpg" alt="Canon G3010" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">PIXMA G3010</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>Inkjet · WiFi</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('canon_ix6770')"><img class="product-img" src="images/canon_ix6770.jpg" alt="Canon iX6770" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6770</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('canon_ix6770')"><img class="product-img" src="images/canon_ix6770.jpg" alt="Canon iX6870" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6870</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card" onclick="openModal('canon_ix6770')"><img class="product-img" src="images/Canon%20ix6770.jpg" alt="Canon iX6770" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6770</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card" onclick="openModal('canon_ix6770')"><img class="product-img" src="images/Canon%20ix6770.jpg" alt="Canon iX6870" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6870</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
     </div>
     <div class="sub-label">Laser</div>
     <div class="product-grid">
@@ -526,8 +538,8 @@ footer a{color:#4da3e8;text-decoration:none}
     </div>
     <div class="sub-label">กระดาษ A4 — Double A</div>
     <div class="paper-grid">
-      <div class="paper-card"><img src="images/doublea_pack.jpg" alt="Double A Pack" loading="lazy" class="paper-img"><div class="paper-brand">Double A</div><div class="paper-name">Double A Premium</div><div class="paper-type"><i class="ti ti-stack" style="font-size:11px"></i>Pack · 500 แผ่น</div><div class="product-price">สอบถามราคา</div><button class="cta-btn-w" style="background:#1d74c8;color:#fff;border-radius:20px;padding:8px;font-size:12px;border:none;cursor:pointer;margin-top:4px;width:100%;justify-content:center;display:flex;gap:6px;font-family:'Prompt',sans-serif" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>สอบถาม LINE</button></div>
-      <div class="paper-card"><img src="images/doublea_box.jpg" alt="Double A Box" loading="lazy" class="paper-img"><div class="paper-brand">Double A</div><div class="paper-name">Double A Premium</div><div class="paper-type"><i class="ti ti-box" style="font-size:11px"></i>ลัง · 5 รีม</div><div class="product-price">สอบถามราคา</div><button class="cta-btn-w" style="background:#1d74c8;color:#fff;border-radius:20px;padding:8px;font-size:12px;border:none;cursor:pointer;margin-top:4px;width:100%;justify-content:center;display:flex;gap:6px;font-family:'Prompt',sans-serif" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>สอบถาม LINE</button></div>
+      <div class="paper-card"><img src="images/A4%20pack.jpg" alt="Double A Pack" loading="lazy" class="paper-img"><div class="paper-brand">Double A</div><div class="paper-name">Double A Premium</div><div class="paper-type"><i class="ti ti-stack" style="font-size:11px"></i>Pack · 500 แผ่น</div><div class="product-price">สอบถามราคา</div><button class="cta-btn-w" style="background:#1d74c8;color:#fff;border-radius:20px;padding:8px;font-size:12px;border:none;cursor:pointer;margin-top:4px;width:100%;justify-content:center;display:flex;gap:6px;font-family:'Prompt',sans-serif" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>สอบถาม LINE</button></div>
+      <div class="paper-card"><img src="images/A4%20box.jpg" alt="Double A Box" loading="lazy" class="paper-img"><div class="paper-brand">Double A</div><div class="paper-name">Double A Premium</div><div class="paper-type"><i class="ti ti-box" style="font-size:11px"></i>ลัง · 5 รีม</div><div class="product-price">สอบถามราคา</div><button class="cta-btn-w" style="background:#1d74c8;color:#fff;border-radius:20px;padding:8px;font-size:12px;border:none;cursor:pointer;margin-top:4px;width:100%;justify-content:center;display:flex;gap:6px;font-family:'Prompt',sans-serif" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>สอบถาม LINE</button></div>
     </div>
     <div class="cta-bar"><div><p>สั่งกระดาษทั้งปลีกและส่ง</p><span>มีพร้อมส่งทันที</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
@@ -553,15 +565,31 @@ footer a{color:#4da3e8;text-decoration:none}
 <div class="collection-section">
   <div class="section-eyebrow">Collection</div>
   <div class="section-title">รู้จักสินค้าให้มากขึ้น</div>
-  <div class="section-sub">รายละเอียด สเปค และเปรียบเทียบรุ่น ก่อนตัดสินใจเลือก</div>
-  <div class="collection-grid">
-    <div class="collection-card"><img src="images/poster_brother_collection.png" alt="Brother Collection T230 T530 T730" loading="lazy"></div>
-    <div class="collection-card"><img src="images/poster_epson_l5290.png" alt="Epson L5290 สเปค" loading="lazy"></div>
-    <div class="collection-card"><img src="images/poster_brother_who.png" alt="Brother เหมาะกับใคร" loading="lazy"></div>
-    <div class="collection-card"><img src="images/poster_epson_l3210.png" alt="Epson L3210 สเปค" loading="lazy"></div>
-    <div class="collection-card"><img src="images/poster_brother_t430.png" alt="Brother DCP-T430W สเปค" loading="lazy"></div>
-    <div class="collection-card"><img src="images/poster_brother_t730.png" alt="Brother DCP-T730DW สเปค" loading="lazy"></div>
+  <div class="section-sub">เลื่อนดูได้ · กดรูปเพื่อขยายเต็มจอ 👇</div>
+  <div class="collection-slider" id="collectionSlider">
+    <div class="collection-card" onclick="openLightbox(0)"><img src="images/poster_brother_collection.png" alt="Brother Collection T230 T530 T730" loading="lazy"></div>
+    <div class="collection-card" onclick="openLightbox(1)"><img src="images/poster_epson_l5290.png" alt="Epson L5290 สเปค" loading="lazy"></div>
+    <div class="collection-card" onclick="openLightbox(2)"><img src="images/poster_brother_who.png" alt="Brother เหมาะกับใคร" loading="lazy"></div>
+    <div class="collection-card" onclick="openLightbox(3)"><img src="images/poster_epson_l3210.png" alt="Epson L3210 สเปค" loading="lazy"></div>
+    <div class="collection-card" onclick="openLightbox(4)"><img src="images/poster_brother_t430.png" alt="Brother DCP-T430W สเปค" loading="lazy"></div>
+    <div class="collection-card" onclick="openLightbox(5)"><img src="images/poster_brother_t730.png" alt="Brother DCP-T730DW สเปค" loading="lazy"></div>
   </div>
+  <div class="slider-dots" id="sliderDots">
+    <div class="slider-dot active" onclick="scrollToCard(0)"></div>
+    <div class="slider-dot" onclick="scrollToCard(1)"></div>
+    <div class="slider-dot" onclick="scrollToCard(2)"></div>
+    <div class="slider-dot" onclick="scrollToCard(3)"></div>
+    <div class="slider-dot" onclick="scrollToCard(4)"></div>
+    <div class="slider-dot" onclick="scrollToCard(5)"></div>
+  </div>
+</div>
+
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
+  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
+  <button class="lightbox-prev" onclick="prevLightbox()">‹</button>
+  <img id="lightboxImg" src="" alt="">
+  <button class="lightbox-next" onclick="nextLightbox()">›</button>
 </div>
 
 <!-- PROMISE -->
@@ -729,7 +757,7 @@ const products = {
     ]
   },
   canon_lbp6030: {
-    brand:'Canon', name:'LBP6030', type:'Laser · Mono', img:'images/canon_lbp6030.jpg',
+    brand:'Canon', name:'LBP6030', type:'Laser · Mono', img:'canon_lbp6030.jpg',
     specs:[
       {k:'ฟังก์ชัน',v:'ปริ้นขาวดำ'},
       {k:'ความเร็วพิมพ์',v:'18 แผ่น/นาที'},
@@ -740,7 +768,7 @@ const products = {
     ]
   },
   canon_ix6770: {
-    brand:'Canon', name:'PIXMA iX6770/iX6870', type:'Inkjet · A3', img:'images/canon_ix6770.jpg',
+    brand:'Canon', name:'PIXMA iX6770/iX6870', type:'Inkjet · A3', img:'images/Canon%20ix6770.jpg',
     specs:[
       {k:'ฟังก์ชัน',v:'ปริ้นสีและขาวดำ'},
       {k:'ขนาดกระดาษ',v:'ปริ้นได้ถึง A3'},
@@ -937,8 +965,48 @@ function switchTab(id, btn) {
 
 function scrollTop() { window.scrollTo({top:0,behavior:'smooth'}); }
 
-// Bottom nav active state
-window.addEventListener('scroll', () => {
+// COLLECTION SLIDER DOTS
+const slider = document.getElementById('collectionSlider');
+const dots = document.querySelectorAll('.slider-dot');
+if(slider) {
+  slider.addEventListener('scroll', () => {
+    const cards = slider.querySelectorAll('.collection-card');
+    const scrollLeft = slider.scrollLeft;
+    const cardWidth = cards[0].offsetWidth + 14;
+    const index = Math.round(scrollLeft / cardWidth);
+    dots.forEach((d,i) => d.classList.toggle('active', i === index));
+  });
+}
+function scrollToCard(i) {
+  const cards = slider.querySelectorAll('.collection-card');
+  const cardWidth = cards[0].offsetWidth + 14;
+  slider.scrollTo({left: i * cardWidth, behavior: 'smooth'});
+}
+
+// LIGHTBOX
+const lightboxImgs = [
+  'images/poster_brother_collection.png',
+  'images/poster_epson_l5290.png',
+  'images/poster_brother_who.png',
+  'images/poster_epson_l3210.png',
+  'images/poster_brother_t430.png',
+  'images/poster_brother_t730.png'
+];
+let currentLightbox = 0;
+function openLightbox(i) {
+  currentLightbox = i;
+  document.getElementById('lightboxImg').src = lightboxImgs[i];
+  document.getElementById('lightbox').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+function closeLightbox() {
+  document.getElementById('lightbox').classList.remove('open');
+  document.body.style.overflow = '';
+}
+function closeLightboxOutside(e) { if(e.target === document.getElementById('lightbox')) closeLightbox(); }
+function prevLightbox() { currentLightbox = (currentLightbox - 1 + lightboxImgs.length) % lightboxImgs.length; document.getElementById('lightboxImg').src = lightboxImgs[currentLightbox]; }
+function nextLightbox() { currentLightbox = (currentLightbox + 1) % lightboxImgs.length; document.getElementById('lightboxImg').src = lightboxImgs[currentLightbox]; }
+document.addEventListener('keydown', e => { if(document.getElementById('lightbox').classList.contains('open')) { if(e.key==='Escape') closeLightbox(); if(e.key==='ArrowLeft') prevLightbox(); if(e.key==='ArrowRight') nextLightbox(); }});
   const sections = ['contact','reviews','products','services'];
   const items = document.querySelectorAll('.bottom-nav-item');
   let active = 0;

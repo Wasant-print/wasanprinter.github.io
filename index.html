@@ -656,7 +656,25 @@ function scrollToCard(i){
   slider.scrollTo({left:i*(cards[0].offsetWidth+14),behavior:'smooth'});
 }
 
-// LIGHTBOX
+// COLLECTION AUTO SLIDE
+let autoSlideInterval = setInterval(()=>{
+  const cards = slider.querySelectorAll('.collection-card');
+  const cardWidth = cards[0].offsetWidth + 14;
+  const maxScroll = cardWidth * (cards.length - 1);
+  const next = slider.scrollLeft + cardWidth > maxScroll ? 0 : slider.scrollLeft + cardWidth;
+  slider.scrollTo({left: next, behavior:'smooth'});
+}, 3000);
+slider.addEventListener('touchstart', ()=> clearInterval(autoSlideInterval));
+slider.addEventListener('mouseenter', ()=> clearInterval(autoSlideInterval));
+slider.addEventListener('mouseleave', ()=>{
+  autoSlideInterval = setInterval(()=>{
+    const cards = slider.querySelectorAll('.collection-card');
+    const cardWidth = cards[0].offsetWidth + 14;
+    const maxScroll = cardWidth * (cards.length - 1);
+    const next = slider.scrollLeft + cardWidth > maxScroll ? 0 : slider.scrollLeft + cardWidth;
+    slider.scrollTo({left: next, behavior:'smooth'});
+  }, 3000);
+});
 const lightboxImgs=['images/poster_brother_collection.png','images/poster_epson_l5290.png','images/poster_brother_who.png','images/poster_epson_l3210.png','images/poster_brother_t430.png','images/poster_brother_t730.png'];
 let currentLightbox=0;
 function openLightbox(i){currentLightbox=i;document.getElementById('lightboxImg').src=lightboxImgs[i];document.getElementById('lightbox').classList.add('open');document.body.style.overflow='hidden';}

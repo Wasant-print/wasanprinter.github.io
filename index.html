@@ -5,245 +5,314 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="วสันต์ ปริ้นเตอร์ แอนด์ เซอร์วิส ซ่อมและขายเครื่องปริ้น Canon Epson Brother ครบวงจร เชียงใหม่ ประสบการณ์กว่า 10 ปี">
 <title>วสันต์ปริ้นเตอร์ แอนด์ เซอร์วิส | เชียงใหม่</title>
-<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v19.0"></script>
 <style>
+/* ===== DESIGN TOKENS =====
+   bg        #FFFFFF   pure white
+   bg-soft   #EAF3FF   pale blue tint
+   ink       #0B0B12   near-black text
+   blue      #0057FF   vivid primary blue
+   blue-deep #0038B8   pressed / shadow blue
+   blue-pale #D6E8FF   soft blue fill
+   line      #0B0B12   brutalist black outline
+   Display font: Prompt (800/900) — chunky Gen-Z headline weight, full Thai support
+   Accent font: Space Grotesk — numerals, badges, English labels
+*/
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{font-family:'Prompt',sans-serif;background:#fff;color:#1d1d1f;padding-bottom:70px}
-nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.92);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-bottom:0.5px solid #d2d2d7;padding:0 24px;display:flex;align-items:center;justify-content:space-between;height:52px}
-.nav-logo{font-size:15px;font-weight:700;color:#1d74c8}
-.nav-links{display:flex;gap:20px}
-.nav-links a{font-size:13px;color:#6e6e73;text-decoration:none}
-.nav-links a:hover{color:#1d74c8}
-.nav-cta{background:#1d74c8;color:#fff;font-family:'Prompt',sans-serif;font-size:13px;font-weight:500;padding:7px 16px;border-radius:20px;text-decoration:none}
-@media(max-width:600px){.nav-links{display:none}}
-.bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:rgba(255,255,255,0.95);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border-top:0.5px solid #d2d2d7;padding:8px 0 env(safe-area-inset-bottom,8px)}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation-duration:0.001ms!important;animation-iteration-count:1!important}}
+:root{
+  --bg:#FFFFFF; --bg-soft:#EAF3FF; --ink:#0B0B12; --blue:#0057FF; --blue-deep:#0038B8;
+  --blue-pale:#D6E8FF; --line:#0B0B12; --gray:#6b6b76;
+}
+body{font-family:'Prompt',sans-serif;background:var(--bg);color:var(--ink);padding-bottom:76px;overflow-x:hidden}
+.accent{font-family:'Space Grotesk',sans-serif}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+
+/* ---- sticker / brutalist card treatment (signature element) ---- */
+.sticker{border:2.5px solid var(--line);border-radius:18px;background:#fff;box-shadow:5px 5px 0 var(--blue);transition:transform .15s ease, box-shadow .15s ease}
+.sticker:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 var(--blue)}
+.sticker.filled{background:var(--blue);color:#fff;box-shadow:5px 5px 0 var(--ink)}
+.sticker.filled:hover{box-shadow:7px 7px 0 var(--ink)}
+
+/* ---- NAV ---- */
+nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:2.5px solid var(--line);padding:0 20px;display:flex;align-items:center;justify-content:space-between;height:60px}
+.nav-logo{font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:var(--ink);display:flex;align-items:center;gap:8px}
+.nav-logo .dot{width:9px;height:9px;background:var(--blue);border-radius:50%}
+.nav-links{display:flex;gap:4px}
+.nav-links a{font-size:13px;font-weight:500;color:var(--ink);text-decoration:none;padding:8px 12px;border-radius:20px}
+.nav-links a:hover{background:var(--bg-soft);color:var(--blue)}
+.nav-cta{background:var(--ink);color:#fff;font-family:'Prompt',sans-serif;font-size:13px;font-weight:700;padding:9px 18px;border-radius:20px;text-decoration:none;border:2px solid var(--ink)}
+.nav-cta:hover{background:var(--blue);border-color:var(--blue)}
+@media(max-width:680px){.nav-links{display:none}}
+
+.bottom-nav{display:none;position:fixed;bottom:0;left:0;right:0;z-index:200;background:#fff;border-top:2.5px solid var(--line);padding:8px 0 env(safe-area-inset-bottom,8px)}
 .bottom-nav-inner{display:flex;justify-content:space-around;align-items:center}
-.bottom-nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:#6e6e73;font-size:10px;font-weight:500;padding:4px 12px;border-radius:10px;transition:color 0.15s}
+.bottom-nav-item{display:flex;flex-direction:column;align-items:center;gap:2px;text-decoration:none;color:var(--gray);font-size:10px;font-weight:600;padding:5px 12px;border-radius:12px;transition:color .15s}
 .bottom-nav-item i{font-size:22px}
-.bottom-nav-item.active,.bottom-nav-item:hover{color:#1d74c8}
-@media(max-width:768px){.bottom-nav{display:block}}
-.hero{background:linear-gradient(160deg,#e8f4fd 0%,#f0f8ff 50%,#fff 100%);padding:72px 24px 56px;text-align:center}
-.hero-badge{display:inline-flex;align-items:center;gap:6px;background:#e8f4fd;color:#1d74c8;font-size:12px;font-weight:500;padding:5px 14px;border-radius:20px;margin-bottom:20px;border:0.5px solid #b8d9f5}
-.hero h1{font-size:40px;font-weight:700;color:#1d1d1f;letter-spacing:-1px;line-height:1.15;margin-bottom:10px}
-.hero h1 .blue{color:#1d74c8}
-.hero-sub{font-size:17px;font-weight:500;color:#1d74c8;margin-bottom:10px}
-.hero p{font-size:15px;font-weight:300;color:#6e6e73;line-height:1.7;max-width:480px;margin:0 auto 32px}
+.bottom-nav-item.active,.bottom-nav-item:hover{color:var(--blue)}
+
+/* ---- HERO ---- */
+.hero{background:var(--bg-soft);padding:56px 20px 44px;text-align:center;position:relative;border-bottom:2.5px solid var(--line)}
+.hero-badges{display:flex;gap:8px;justify-content:center;flex-wrap:wrap;margin-bottom:22px}
+.hero-badge{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;letter-spacing:.5px;padding:6px 14px;text-transform:uppercase}
+.hero-badge.b1{transform:rotate(-3deg)}
+.hero-badge.b2{transform:rotate(2deg)}
+.hero h1{font-size:44px;font-weight:900;color:var(--ink);letter-spacing:-1.5px;line-height:1.05;margin-bottom:14px}
+.hero h1 .hl{color:var(--blue);position:relative;display:inline-block}
+.hero h1 .hl svg{position:absolute;left:0;bottom:-6px;width:100%;height:14px}
+.hero-sub{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--ink);margin-bottom:12px}
+.hero p{font-size:15px;font-weight:300;color:var(--gray);line-height:1.7;max-width:440px;margin:0 auto 30px}
 .hero-btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
-.btn-primary{background:#1d74c8;color:#fff;font-family:'Prompt',sans-serif;font-size:15px;font-weight:600;padding:13px 28px;border-radius:24px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:none;cursor:pointer}
-.btn-secondary{background:transparent;color:#1d74c8;font-family:'Prompt',sans-serif;font-size:15px;font-weight:600;padding:12px 28px;border-radius:24px;text-decoration:none;border:1.5px solid #1d74c8;display:inline-flex;align-items:center;gap:8px}
-.free-banner{background:#1d74c8;padding:14px 24px;text-align:center;display:flex;align-items:center;justify-content:center;gap:10px;flex-wrap:wrap}
-.free-banner span{color:#fff;font-size:14px;font-weight:500}
-.free-badge{background:#fff;color:#1d74c8;font-size:11px;font-weight:700;padding:3px 10px;border-radius:12px}
-.highlights{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:#e0e0e5;border-bottom:0.5px solid #d2d2d7}
-.highlight-item{background:#f5f5f7;padding:20px 16px;text-align:center}
-.highlight-item i{font-size:24px;color:#1d74c8;margin-bottom:8px;display:block}
-.highlight-item strong{font-size:13px;font-weight:600;color:#1d1d1f;display:block}
-.highlight-item span{font-size:12px;font-weight:300;color:#6e6e73}
-.exp-banner{background:linear-gradient(135deg,#1d74c8,#1557a0);padding:32px 24px;display:grid;grid-template-columns:repeat(2,1fr);gap:1px}
-.exp-item{text-align:center;padding:16px}
-.exp-num{font-size:36px;font-weight:700;color:#fff;letter-spacing:-1px}
-.exp-label{font-size:12px;font-weight:300;color:rgba(255,255,255,0.8);margin-top:4px}
-.section{padding:52px 24px}
-.section-eyebrow{font-size:11px;font-weight:600;color:#1d74c8;text-transform:uppercase;letter-spacing:1.8px;margin-bottom:8px}
-.section-title{font-size:26px;font-weight:700;color:#1d1d1f;letter-spacing:-0.5px;margin-bottom:6px}
-.section-sub{font-size:14px;font-weight:300;color:#6e6e73;margin-bottom:28px}
+.btn-primary{background:var(--ink);color:#fff;font-family:'Prompt',sans-serif;font-size:15px;font-weight:700;padding:14px 26px;border-radius:26px;text-decoration:none;display:inline-flex;align-items:center;gap:8px;border:2.5px solid var(--ink);box-shadow:4px 4px 0 var(--blue)}
+.btn-primary:hover{transform:translate(-2px,-2px);box-shadow:6px 6px 0 var(--blue)}
+.btn-secondary{background:#fff;color:var(--ink);font-family:'Prompt',sans-serif;font-size:15px;font-weight:700;padding:13px 26px;border-radius:26px;text-decoration:none;border:2.5px solid var(--ink);display:inline-flex;align-items:center;gap:8px}
+.btn-secondary:hover{background:var(--blue-pale)}
+
+/* ---- MARQUEE STRIP (signature motion element) ---- */
+.marquee-wrap{background:var(--ink);border-bottom:2.5px solid var(--line);overflow:hidden;padding:12px 0}
+.marquee{display:flex;width:max-content;animation:scroll 22s linear infinite;gap:0}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.marquee span{font-family:'Space Grotesk',sans-serif;font-size:14px;font-weight:700;color:#fff;padding:0 22px;white-space:nowrap;display:flex;align-items:center;gap:10px}
+.marquee span::after{content:'✦';color:var(--blue);font-size:12px}
+
+/* ---- STAT STRIP ---- */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);border-bottom:2.5px solid var(--line)}
+.stat-item{padding:22px 10px;text-align:center;border-right:2.5px solid var(--line)}
+.stat-item:last-child{border-right:none}
+.stat-num{font-family:'Space Grotesk',sans-serif;font-size:26px;font-weight:700;color:var(--blue)}
+.stat-label{font-size:11px;font-weight:400;color:var(--gray);margin-top:2px}
+
+/* ---- GENERIC SECTION ---- */
+.section{padding:56px 20px}
+.section.soft{background:var(--bg-soft)}
+.section-eyebrow{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:2px;margin-bottom:8px}
+.section-title{font-size:28px;font-weight:900;color:var(--ink);letter-spacing:-0.8px;margin-bottom:6px}
+.section-sub{font-size:14px;font-weight:300;color:var(--gray);margin-bottom:26px}
+
+/* ---- SERVICES ---- */
 .services-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.service-card{background:#f5f5f7;border-radius:16px;padding:22px 18px;border:0.5px solid #e0e0e5}
-.service-icon{width:44px;height:44px;background:#deeefb;border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
-.service-icon i{font-size:22px;color:#1d74c8}
-.service-card h3{font-size:14px;font-weight:600;color:#1d1d1f;margin-bottom:5px}
-.service-card p{font-size:12px;font-weight:300;color:#6e6e73;line-height:1.6}
-.bestseller-section{background:#f5f5f7;padding:52px 24px}
-.bestseller-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
-.bestseller-card{background:#fff;border-radius:16px;padding:16px 12px;border:0.5px solid #e0e0e5;text-align:center;position:relative;cursor:pointer;transition:box-shadow 0.2s}
-.bestseller-card:hover{box-shadow:0 4px 20px rgba(29,116,200,0.15)}
-.bestseller-card img{width:100%;height:100px;object-fit:contain;margin-bottom:10px}
-.bs-rank{position:absolute;top:8px;left:8px;background:#1d74c8;color:#fff;font-size:10px;font-weight:700;padding:2px 8px;border-radius:10px}
-.bs-wifi{position:absolute;top:8px;right:8px;background:#e8f4fd;color:#1d74c8;font-size:10px;font-weight:600;padding:2px 8px;border-radius:10px}
-.bestseller-card h4{font-size:12px;font-weight:600;color:#1d1d1f;margin-bottom:4px}
-.bestseller-card p{font-size:10px;font-weight:300;color:#6e6e73;line-height:1.4}
-.compare-section{padding:52px 24px}
-.compare-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:24px}
-.compare-card{border-radius:16px;padding:22px 18px}
-.compare-card.canon{background:#fff8f0;border:1.5px solid #f5a623}
-.compare-card.epson{background:#f0f4ff;border:1.5px solid #1d74c8}
-.compare-brand{font-size:18px;font-weight:700;margin-bottom:6px}
-.compare-card.canon .compare-brand{color:#c8000a}
-.compare-card.epson .compare-brand{color:#1d74c8}
-.compare-tag{font-size:11px;font-weight:500;padding:4px 10px;border-radius:20px;display:inline-block;margin-bottom:14px}
-.compare-card.canon .compare-tag{background:#fff3e0;color:#f5a623}
-.compare-card.epson .compare-tag{background:#e8f4fd;color:#1d74c8}
-.compare-list{list-style:none}
-.compare-list li{font-size:12px;font-weight:300;color:#1d1d1f;padding:5px 0;border-bottom:0.5px solid rgba(0,0,0,0.06);display:flex;align-items:flex-start;gap:6px;line-height:1.5}
-.compare-list li::before{content:'✓';color:#1d74c8;font-weight:600;flex-shrink:0;margin-top:1px}
-.finder-section{background:#f5f5f7;padding:52px 24px}
-.finder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px}
-.finder-card{background:#fff;border-radius:16px;padding:16px 12px;border:0.5px solid #e0e0e5;text-align:center;cursor:pointer;transition:box-shadow 0.2s}
-.finder-card:hover{box-shadow:0 4px 20px rgba(29,116,200,0.15)}
-.finder-card img{width:100%;height:90px;object-fit:contain;margin-bottom:10px}
-.finder-model{font-size:14px;font-weight:700;color:#1d74c8;margin-bottom:4px}
-.finder-tag{font-size:10px;font-weight:500;background:#e8f4fd;color:#1d74c8;padding:3px 8px;border-radius:10px;display:inline-block;margin-bottom:8px}
-.finder-card p{font-size:11px;font-weight:300;color:#6e6e73;line-height:1.5}
-.products-wrap{background:#f5f5f7;padding:52px 0}
-.tab-nav{display:flex;gap:6px;flex-wrap:wrap;padding:20px 24px 0;border-bottom:0.5px solid #e0e0e5;background:#f5f5f7;overflow-x:auto}
-.tab-btn{font-family:'Prompt',sans-serif;font-size:12px;font-weight:500;padding:7px 14px;border-radius:20px 20px 0 0;border:0.5px solid #d2d2d7;border-bottom:none;background:transparent;color:#6e6e73;cursor:pointer;transition:all 0.15s;white-space:nowrap}
-.tab-btn.active{background:#fff;color:#1d74c8;border-color:#e0e0e5;font-weight:600}
-.tab-panel{display:none;padding:24px;background:#fff}
+.service-card{padding:20px 16px}
+.service-icon{width:42px;height:42px;background:var(--ink);border-radius:12px;display:flex;align-items:center;justify-content:center;margin-bottom:14px}
+.service-icon i{font-size:21px;color:#fff}
+.service-card h3{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:5px}
+.service-card p{font-size:12px;font-weight:300;color:var(--gray);line-height:1.6}
+
+/* ---- FREE CHECK BANNER ---- */
+.free-banner{margin:0 20px 0;padding:16px 20px;display:flex;align-items:center;justify-content:center;gap:12px;flex-wrap:wrap}
+.free-banner strong{font-family:'Space Grotesk',sans-serif;font-size:14px;color:#fff}
+.free-tag{background:#fff;color:var(--blue);font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;padding:4px 12px;border-radius:12px;border:2px solid var(--ink)}
+
+/* ---- BESTSELLER ---- */
+.bestseller-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.bestseller-card{padding:14px 10px;text-align:center;position:relative;cursor:pointer}
+.bestseller-card img{width:100%;height:92px;object-fit:contain;margin-bottom:8px}
+.bs-rank{position:absolute;top:-10px;left:10px;font-family:'Space Grotesk',sans-serif;background:var(--ink);color:#fff;font-size:11px;font-weight:700;padding:3px 10px;border-radius:10px;border:2px solid var(--ink)}
+.bs-wifi{position:absolute;top:-10px;right:10px;background:var(--blue);color:#fff;font-size:9px;font-weight:700;padding:3px 8px;border-radius:10px;border:2px solid var(--ink)}
+.bestseller-card h4{font-size:12px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.bestseller-card p{font-size:10px;font-weight:300;color:var(--gray);line-height:1.4}
+
+/* ---- FINDER ---- */
+.finder-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.finder-card{padding:14px 10px;text-align:center;cursor:pointer}
+.finder-card img{width:100%;height:80px;object-fit:contain;margin-bottom:8px}
+.finder-model{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:var(--blue);margin-bottom:4px}
+.finder-tag{font-size:9px;font-weight:600;background:var(--blue-pale);color:var(--blue);padding:3px 8px;border-radius:10px;display:inline-block;margin-bottom:6px}
+.finder-card p{font-size:10px;font-weight:300;color:var(--gray);line-height:1.4}
+
+/* ---- PRODUCTS TABS ---- */
+.products-wrap{background:var(--bg-soft);padding:56px 0;border-top:2.5px solid var(--line)}
+.tab-nav{display:flex;gap:8px;flex-wrap:wrap;padding:0 20px 22px;overflow-x:auto}
+.tab-btn{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;padding:9px 16px;border-radius:20px;border:2.5px solid var(--ink);background:#fff;color:var(--ink);cursor:pointer;white-space:nowrap;transition:all .15s}
+.tab-btn.active{background:var(--ink);color:#fff}
+.tab-panel{display:none;padding:0 20px}
 .tab-panel.active{display:block}
 .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.product-card{background:#f5f5f7;border-radius:14px;padding:14px;border:0.5px solid #e0e0e5;display:flex;flex-direction:column;gap:6px;cursor:pointer;transition:box-shadow 0.2s}
-.product-card:hover{box-shadow:0 4px 16px rgba(29,116,200,0.15)}
-.product-img{width:100%;height:110px;object-fit:contain;background:#fff;border-radius:10px;padding:8px}
-.product-brand{font-size:10px;font-weight:600;color:#1d74c8;text-transform:uppercase;letter-spacing:1px}
-.product-name{font-size:13px;font-weight:600;color:#1d1d1f;line-height:1.3}
-.product-type{display:inline-flex;align-items:center;gap:4px;background:#deeefb;color:#1d74c8;font-size:10px;font-weight:500;padding:3px 8px;border-radius:10px;width:fit-content}
-.product-price{font-size:12px;font-weight:300;color:#6e6e73;margin-top:auto}
-.tap-hint{font-size:10px;color:#b0b0b5;text-align:center;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:3px}
-.sub-label{font-size:12px;font-weight:500;color:#6e6e73;margin-bottom:14px;margin-top:20px}
+.product-card{padding:14px;display:flex;flex-direction:column;gap:6px;cursor:pointer}
+.product-img{width:100%;height:104px;object-fit:contain;background:var(--bg-soft);border-radius:10px;padding:8px}
+.product-brand{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px}
+.product-name{font-size:13px;font-weight:700;color:var(--ink);line-height:1.3}
+.product-type{display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10px;font-weight:500;padding:3px 9px;border-radius:10px;width:fit-content}
+.product-price{font-size:12px;font-weight:300;color:var(--gray);margin-top:auto}
+.tap-hint{font-size:10px;color:var(--blue);font-weight:600;text-align:center;margin-top:4px;display:flex;align-items:center;justify-content:center;gap:3px}
+.sub-label{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--ink);margin-bottom:14px;margin-top:22px;display:flex;align-items:center;gap:8px}
 .sub-label:first-child{margin-top:0}
+.sub-label::before{content:'';width:8px;height:8px;background:var(--blue);border-radius:2px}
 .a3-grid{display:grid;grid-template-columns:1fr;gap:14px}
-.a3-card{background:#f5f5f7;border-radius:14px;padding:16px;border:0.5px solid #e0e0e5;display:grid;grid-template-columns:100px 1fr;gap:14px;align-items:center;cursor:pointer;transition:box-shadow 0.2s}
-.a3-card:hover{box-shadow:0 4px 16px rgba(29,116,200,0.15)}
-.a3-card img{width:100px;height:80px;object-fit:contain;background:#fff;border-radius:10px;padding:6px}
-.a3-info h4{font-size:14px;font-weight:600;color:#1d1d1f;margin-bottom:4px}
-.a3-info p{font-size:12px;font-weight:300;color:#6e6e73;line-height:1.5}
+.a3-card{padding:16px;display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;cursor:pointer}
+.a3-card img{width:96px;height:76px;object-fit:contain;background:var(--bg-soft);border-radius:10px;padding:6px}
+.a3-info h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
+.a3-info p{font-size:12px;font-weight:300;color:var(--gray);line-height:1.5}
 .ink-group{margin-bottom:20px}
-.ink-group-title{font-size:13px;font-weight:600;color:#1d1d1f;margin-bottom:10px;padding-bottom:6px;border-bottom:0.5px solid #e0e0e5}
+.ink-group-title{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--ink);margin-bottom:10px;padding-bottom:6px;border-bottom:2px solid var(--line)}
 .ink-chips{display:flex;flex-wrap:wrap;gap:8px}
-.ink-chip{background:#f5f5f7;border:0.5px solid #d2d2d7;border-radius:20px;padding:6px 14px;font-size:12px;color:#1d1d1f;display:flex;align-items:center;gap:6px}
+.ink-chip{background:#fff;border:2px solid var(--line);border-radius:20px;padding:6px 14px;font-size:12px;color:var(--ink);display:flex;align-items:center;gap:6px;font-weight:500}
 .dot{width:8px;height:8px;border-radius:50%;flex-shrink:0}
-.dot-color{background:linear-gradient(135deg,#e53935,#1e88e5,#43a047,#fdd835)}
-.dot-black{background:#1d1d1f}
-.dot-both{background:linear-gradient(135deg,#1d1d1f 50%,#1e88e5 50%)}
+.dot-color{background:conic-gradient(from 180deg,#e53935,#1e88e5,#43a047,#fdd835,#e53935)}
+.dot-black{background:var(--ink)}
+.dot-both{background:linear-gradient(135deg,var(--ink) 50%,var(--blue) 50%)}
 .paper-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
-.paper-card{background:#f5f5f7;border-radius:14px;padding:14px;border:0.5px solid #e0e0e5;display:flex;flex-direction:column;gap:8px}
-.paper-img{width:100%;height:120px;object-fit:contain;background:#fff;border-radius:10px;padding:8px}
-.paper-brand{font-size:10px;font-weight:600;color:#1d74c8;text-transform:uppercase;letter-spacing:1px}
-.paper-name{font-size:13px;font-weight:600;color:#1d1d1f}
-.paper-type{display:inline-flex;align-items:center;gap:4px;background:#deeefb;color:#1d74c8;font-size:10px;font-weight:500;padding:3px 8px;border-radius:10px;width:fit-content}
+.paper-card{padding:14px;display:flex;flex-direction:column;gap:8px}
+.paper-img{width:100%;height:114px;object-fit:contain;background:var(--bg-soft);border-radius:10px;padding:8px}
+.paper-brand{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px}
+.paper-name{font-size:13px;font-weight:700;color:var(--ink)}
+.paper-type{display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10px;font-weight:500;padding:3px 9px;border-radius:10px;width:fit-content}
 .repair-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:10px}
-.repair-card{background:#f5f5f7;border-radius:14px;padding:16px;border:0.5px solid #e0e0e5;display:flex;align-items:flex-start;gap:12px}
-.repair-icon{width:38px;height:38px;background:#deeefb;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.repair-icon i{font-size:19px;color:#1d74c8}
-.repair-card h4{font-size:13px;font-weight:600;color:#1d1d1f;margin-bottom:3px}
-.repair-card p{font-size:11px;font-weight:300;color:#6e6e73;line-height:1.5}
-.cta-bar{background:#1d74c8;border-radius:14px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;margin-top:20px;gap:12px;flex-wrap:wrap}
-.cta-bar p{font-size:14px;font-weight:500;color:#fff}
-.cta-bar span{font-size:12px;font-weight:300;color:rgba(255,255,255,0.8)}
+.repair-card{padding:15px;display:flex;align-items:flex-start;gap:12px}
+.repair-icon{width:36px;height:36px;background:var(--ink);border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.repair-icon i{font-size:18px;color:#fff}
+.repair-card h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:3px}
+.repair-card p{font-size:11px;font-weight:300;color:var(--gray);line-height:1.5}
+.cta-bar{background:var(--ink);border-radius:16px;padding:18px 20px;display:flex;align-items:center;justify-content:space-between;margin-top:22px;gap:12px;flex-wrap:wrap;border:2.5px solid var(--line)}
+.cta-bar p{font-size:14px;font-weight:700;color:#fff}
+.cta-bar span{font-size:12px;font-weight:300;color:rgba(255,255,255,0.7)}
 .cta-btns{display:flex;gap:8px}
-.cta-btn-w{font-family:'Prompt',sans-serif;font-size:13px;font-weight:600;background:#fff;color:#1d74c8;border:none;border-radius:20px;padding:9px 18px;cursor:pointer;display:flex;align-items:center;gap:6px}
-.cta-btn-t{font-family:'Prompt',sans-serif;font-size:13px;font-weight:500;background:rgba(255,255,255,0.15);color:#fff;border:1px solid rgba(255,255,255,0.4);border-radius:20px;padding:9px 18px;cursor:pointer;display:flex;align-items:center;gap:6px}
-.collection-section{padding:52px 24px;background:#fff}
-.collection-slider{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:12px;margin-top:24px;scrollbar-width:none}
+.cta-btn-w{font-family:'Prompt',sans-serif;font-size:13px;font-weight:700;background:var(--blue);color:#fff;border:2px solid #fff;border-radius:20px;padding:9px 18px;cursor:pointer;display:flex;align-items:center;gap:6px}
+.cta-btn-t{font-family:'Prompt',sans-serif;font-size:13px;font-weight:500;background:transparent;color:#fff;border:1.5px solid rgba(255,255,255,0.5);border-radius:20px;padding:9px 18px;cursor:pointer;display:flex;align-items:center;gap:6px}
+
+/* ---- COMPARE (versus battle) ---- */
+.compare-grid{display:grid;grid-template-columns:1fr auto 1fr;gap:10px;align-items:stretch}
+.compare-card{border-radius:18px;padding:22px 16px}
+.compare-card.canon{background:#fff}
+.compare-card.epson{background:var(--blue);color:#fff}
+.compare-vs{align-self:center;font-family:'Space Grotesk',sans-serif;font-size:16px;font-weight:700;color:var(--ink);background:#fff;width:40px;height:40px;border-radius:50%;display:flex;align-items:center;justify-content:center;border:2.5px solid var(--line)}
+.compare-brand{font-family:'Space Grotesk',sans-serif;font-size:18px;font-weight:700;margin-bottom:6px}
+.compare-tag{font-size:11px;font-weight:600;padding:4px 10px;border-radius:20px;display:inline-block;margin-bottom:14px}
+.compare-card.canon .compare-tag{background:var(--bg-soft);color:var(--blue)}
+.compare-card.epson .compare-tag{background:rgba(255,255,255,0.2);color:#fff}
+.compare-list{list-style:none}
+.compare-list li{font-size:12px;font-weight:300;padding:6px 0;display:flex;align-items:flex-start;gap:6px;line-height:1.5}
+.compare-card.canon .compare-list li{border-bottom:1px solid #eee}
+.compare-card.epson .compare-list li{border-bottom:1px solid rgba(255,255,255,0.2)}
+.compare-list li::before{content:'✓';font-weight:700;flex-shrink:0;margin-top:1px}
+.compare-card.canon .compare-list li::before{color:var(--blue)}
+.compare-card.epson .compare-list li::before{color:#fff}
+@media(max-width:600px){.compare-grid{grid-template-columns:1fr;text-align:center}.compare-vs{margin:0 auto}}
+
+/* ---- COLLECTION SLIDER ---- */
+.collection-slider{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:12px;scrollbar-width:none}
 .collection-slider::-webkit-scrollbar{display:none}
-.collection-card{flex:0 0 calc(50% - 7px);scroll-snap-align:start;border-radius:16px;overflow:hidden;border:0.5px solid #e0e0e5;cursor:pointer;transition:transform 0.2s,box-shadow 0.2s}
+.collection-card{flex:0 0 calc(50% - 7px);scroll-snap-align:start;overflow:hidden;cursor:pointer;border-radius:18px}
 @media(max-width:600px){.collection-card{flex:0 0 80%}}
-.collection-card:hover{transform:scale(1.02);box-shadow:0 8px 24px rgba(29,116,200,0.15)}
 .collection-card img{width:100%;display:block;object-fit:cover}
 .slider-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
-.slider-dot{width:6px;height:6px;border-radius:50%;background:#d2d2d7;cursor:pointer;transition:all 0.2s}
-.slider-dot.active{background:#1d74c8;width:18px;border-radius:4px}
-.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;background:rgba(0,0,0,0.92);align-items:center;justify-content:center;padding:20px}
+.slider-dot{width:7px;height:7px;border-radius:50%;background:var(--blue-pale);cursor:pointer;transition:all .2s;border:1.5px solid var(--line)}
+.slider-dot.active{background:var(--blue);width:20px;border-radius:4px}
+
+.lightbox{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:999;background:rgba(11,11,18,0.94);align-items:center;justify-content:center;padding:20px}
 .lightbox.open{display:flex}
-.lightbox img{max-width:100%;max-height:90vh;border-radius:12px;object-fit:contain}
-.lightbox-close{position:fixed;top:16px;right:16px;background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:24px;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
-.lightbox-prev,.lightbox-next{position:fixed;top:50%;transform:translateY(-50%);background:rgba(255,255,255,0.15);border:none;color:#fff;font-size:24px;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox img{max-width:100%;max-height:90vh;border-radius:14px;object-fit:contain;border:2.5px solid #fff}
+.lightbox-close{position:fixed;top:16px;right:16px;background:var(--blue);border:2px solid #fff;color:#fff;font-size:22px;width:40px;height:40px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
+.lightbox-prev,.lightbox-next{position:fixed;top:50%;transform:translateY(-50%);background:var(--blue);border:2px solid #fff;color:#fff;font-size:22px;width:44px;height:44px;border-radius:50%;cursor:pointer;display:flex;align-items:center;justify-content:center}
 .lightbox-prev{left:12px}
 .lightbox-next{right:12px}
-.promise-section{background:#f5f5f7;padding:52px 24px}
-.promise-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:28px}
-.promise-card{background:#fff;border-radius:16px;padding:22px 18px;border:0.5px solid #e0e0e5;display:flex;align-items:flex-start;gap:14px}
-.promise-num{font-size:20px;font-weight:700;color:#c8dff5;flex-shrink:0;width:28px}
-.promise-card h4{font-size:14px;font-weight:600;color:#1d1d1f;margin-bottom:4px}
-.promise-card p{font-size:12px;font-weight:300;color:#6e6e73;line-height:1.6}
-.reviews-section{padding:52px 24px;background:#fff}
+
+/* ---- PROMISE (why choose us) ---- */
+.promise-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.promise-card{padding:20px 16px;display:flex;flex-direction:column;gap:10px}
+.promise-icon{width:38px;height:38px;background:var(--blue);border-radius:10px;display:flex;align-items:center;justify-content:center}
+.promise-icon i{font-size:19px;color:#fff}
+.promise-card h4{font-size:14px;font-weight:700;color:var(--ink)}
+.promise-card p{font-size:12px;font-weight:300;color:var(--gray);line-height:1.6}
+
+/* ---- REVIEWS ---- */
 .reviews-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
-.review-card{background:#f5f5f7;border-radius:16px;padding:18px;border:0.5px solid #e0e0e5}
-.review-stars{color:#f5a623;font-size:14px;margin-bottom:8px}
-.review-text{font-size:13px;font-weight:300;color:#1d1d1f;line-height:1.6;margin-bottom:12px}
+.review-card{padding:18px}
+.review-stars{color:var(--blue);font-size:14px;margin-bottom:8px;letter-spacing:2px}
+.review-text{font-size:13px;font-weight:300;color:var(--ink);line-height:1.6;margin-bottom:12px}
 .review-author{display:flex;align-items:center;gap:8px}
-.review-avatar{width:28px;height:28px;background:#1d74c8;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600;flex-shrink:0}
-.review-name{font-size:12px;font-weight:500;color:#1d1d1f}
-.review-source{font-size:11px;font-weight:300;color:#6e6e73}
-.review-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:20px}
-.google-badge{display:inline-flex;align-items:center;gap:8px;background:#f5f5f7;border:0.5px solid #d2d2d7;border-radius:20px;padding:8px 16px}
-.google-badge span{font-size:13px;font-weight:500;color:#1d1d1f}
-.google-badge a{font-size:13px;color:#1d74c8;text-decoration:none;font-weight:500}
-.facebook-section{padding:52px 24px;background:#f5f5f7}
-.fb-widget-wrap{display:flex;flex-direction:column;align-items:center;gap:16px;margin-top:24px}
-.fb-like-wrap{background:#fff;border-radius:16px;padding:20px;border:0.5px solid #e0e0e5;display:flex;align-items:center;gap:14px;width:100%}
-.fb-page-wrap{background:#fff;border-radius:16px;overflow:hidden;border:0.5px solid #e0e0e5;width:100%;display:flex;justify-content:center;padding:16px 0}
+.review-avatar{width:28px;height:28px;background:var(--ink);border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-size:12px;font-weight:600;flex-shrink:0}
+.review-name{font-size:12px;font-weight:600;color:var(--ink)}
+.review-source{font-size:11px;font-weight:300;color:var(--gray)}
+.review-footer{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:12px;margin-top:22px}
+.google-badge{display:inline-flex;align-items:center;gap:8px;background:#fff;border:2px solid var(--line);border-radius:20px;padding:8px 16px}
+.google-badge span{font-family:'Space Grotesk',sans-serif;font-size:13px;font-weight:700;color:var(--ink)}
+.google-badge a{font-size:13px;color:var(--blue);text-decoration:none;font-weight:600}
+
+/* ---- SOCIAL ---- */
+.fb-widget-wrap{display:flex;flex-direction:column;align-items:center;gap:16px}
+.fb-like-wrap{padding:20px;display:flex;align-items:center;gap:14px;width:100%}
+.fb-page-wrap{border-radius:18px;overflow:hidden;border:2.5px solid var(--line);width:100%;display:flex;justify-content:center;padding:16px 0;background:#fff}
 .social-links{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;width:100%}
-.social-card{background:#fff;border-radius:14px;padding:16px;border:0.5px solid #e0e0e5;display:flex;align-items:center;gap:12px;text-decoration:none}
-.social-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.social-card{padding:16px;display:flex;align-items:center;gap:12px;text-decoration:none}
+.social-icon{width:40px;height:40px;border-radius:10px;display:flex;align-items:center;justify-content:center;flex-shrink:0;border:2px solid var(--line)}
 .social-icon.fb{background:#1877f2}
-.social-icon.tt{background:#000}
+.social-icon.tt{background:var(--ink)}
 .social-icon.line{background:#06c755}
-.social-icon.ph{background:#1d74c8}
+.social-icon.ph{background:var(--blue)}
 .social-icon i{font-size:20px;color:#fff}
-.social-card h4{font-size:13px;font-weight:600;color:#1d1d1f;margin-bottom:2px}
-.social-card p{font-size:11px;font-weight:300;color:#6e6e73}
-.brands-section{padding:40px 24px;text-align:center;border-top:0.5px solid #e0e0e5}
+.social-card h4{font-size:13px;font-weight:700;color:var(--ink);margin-bottom:2px}
+.social-card p{font-size:11px;font-weight:300;color:var(--gray)}
+
+/* ---- BRANDS ---- */
+.brands-section{padding:44px 20px;text-align:center}
 .brands-row{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-.brand-chip{background:#f5f5f7;border:0.5px solid #d2d2d7;border-radius:20px;padding:7px 18px;font-size:13px;font-weight:500;color:#1d1d1f}
-.tax-banner{background:linear-gradient(135deg,#1d74c8 0%,#1557a0 100%);padding:40px 24px;text-align:center}
-.tax-banner h2{font-size:22px;font-weight:700;color:#fff;margin-bottom:8px}
-.tax-banner p{font-size:14px;font-weight:300;color:rgba(255,255,255,0.8);margin-bottom:20px}
-.tax-chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.tax-chip{background:rgba(255,255,255,0.15);border:1px solid rgba(255,255,255,0.3);border-radius:12px;padding:8px 18px;color:#fff;font-size:13px;font-weight:500;display:flex;align-items:center;gap:6px}
-.delivery-section{padding:40px 24px;text-align:center;background:#fff;border-top:0.5px solid #e0e0e5}
-.delivery-apps{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:18px}
-.delivery-chip{background:#f5f5f7;border:0.5px solid #d2d2d7;border-radius:12px;padding:12px 22px;color:#1d1d1f;font-size:14px;font-weight:500;display:flex;align-items:center;gap:8px}
-.delivery-chip i{color:#1d74c8;font-size:18px}
-.contact-section{padding:52px 24px;background:#f5f5f7}
-.contact-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;margin-top:24px}
-.contact-card{background:#fff;border-radius:16px;padding:20px;display:flex;align-items:flex-start;gap:14px;border:0.5px solid #e0e0e5}
+.brand-chip{background:#fff;border:2px solid var(--line);border-radius:20px;padding:7px 18px;font-size:13px;font-weight:600;color:var(--ink)}
+
+/* ---- TAX + DELIVERY ---- */
+.tax-delivery{padding:44px 20px;display:flex;flex-direction:column;gap:16px}
+.td-block{padding:22px;text-align:center}
+.td-block h2{font-size:19px;font-weight:800;margin-bottom:6px}
+.td-block p{font-size:13px;font-weight:300;color:var(--gray);margin-bottom:16px}
+.td-chips{display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
+.tax-chip{background:var(--ink);color:#fff;border-radius:12px;padding:9px 16px;font-size:12px;font-weight:600;display:flex;align-items:center;gap:6px}
+.delivery-chip{background:var(--bg-soft);border:2px solid var(--line);border-radius:12px;padding:10px 18px;color:var(--ink);font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px}
+.delivery-chip i{color:var(--blue);font-size:17px}
+
+/* ---- CONTACT ---- */
+.contact-cards{display:grid;grid-template-columns:repeat(2,1fr);gap:14px}
+.contact-card{padding:20px;display:flex;align-items:flex-start;gap:14px}
 .contact-card.full{grid-column:1 / -1}
-.contact-icon-wrap{width:40px;height:40px;border-radius:10px;background:#deeefb;display:flex;align-items:center;justify-content:center;flex-shrink:0}
-.contact-icon-wrap i{font-size:20px;color:#1d74c8}
-.contact-card h4{font-size:10px;font-weight:500;color:#6e6e73;margin-bottom:3px;text-transform:uppercase;letter-spacing:0.8px}
-.contact-card p{font-size:13px;color:#1d1d1f;line-height:1.5}
-.contact-card a{color:#1d74c8;text-decoration:none;font-size:14px;font-weight:600}
-.map-section{padding:0 24px 52px;background:#f5f5f7}
-.map-wrap{border-radius:16px;overflow:hidden;border:0.5px solid #e0e0e5}
+.contact-icon-wrap{width:40px;height:40px;border-radius:10px;background:var(--ink);display:flex;align-items:center;justify-content:center;flex-shrink:0}
+.contact-icon-wrap i{font-size:19px;color:#fff}
+.contact-card h4{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:var(--gray);margin-bottom:3px;text-transform:uppercase;letter-spacing:0.8px}
+.contact-card p{font-size:13px;color:var(--ink);line-height:1.5}
+.contact-card a{color:var(--blue);text-decoration:none;font-size:14px;font-weight:700}
+
+.map-section{padding:0 20px 56px}
+.map-wrap{border-radius:18px;overflow:hidden;border:2.5px solid var(--line)}
 .map-wrap iframe{display:block;width:100%;height:280px;border:none}
-footer{background:#1d1d1f;color:#a1a1a6;padding:32px 24px;text-align:center}
-.footer-logo{font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
+
+footer{background:var(--ink);color:#a1a1ab;padding:34px 20px;text-align:center;border-top:2.5px solid var(--line)}
+.footer-logo{font-family:'Space Grotesk',sans-serif;font-size:15px;font-weight:700;color:#fff;margin-bottom:6px}
 footer p{font-size:12px;font-weight:300;line-height:2}
-footer a{color:#4da3e8;text-decoration:none}
+footer a{color:#7bb0ff;text-decoration:none}
 .footer-links{display:flex;gap:16px;justify-content:center;margin-top:12px;flex-wrap:wrap}
-.footer-links a{font-size:12px;color:#6e6e73;text-decoration:none}
-.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:500;background:rgba(0,0,0,0.5);backdrop-filter:blur(4px);padding:20px;align-items:flex-end;justify-content:center}
+.footer-links a{font-size:12px;color:#8a8a94;text-decoration:none}
+
+/* ---- MODAL ---- */
+.modal-overlay{display:none;position:fixed;top:0;left:0;right:0;bottom:0;z-index:500;background:rgba(11,11,18,0.6);backdrop-filter:blur(4px);padding:20px;align-items:flex-end;justify-content:center}
 .modal-overlay.open{display:flex}
-.modal{background:#fff;border-radius:24px 24px 16px 16px;width:100%;max-width:500px;max-height:85vh;overflow-y:auto;padding:24px;position:relative}
-@media(min-width:600px){.modal-overlay{align-items:center}.modal{border-radius:24px}}
+.modal{background:#fff;border-radius:22px 22px 0 0;width:100%;max-width:500px;max-height:85vh;overflow-y:auto;padding:24px;position:relative;border:2.5px solid var(--line);border-bottom:none}
+@media(min-width:600px){.modal-overlay{align-items:center}.modal{border-radius:22px;border-bottom:2.5px solid var(--line)}}
 .modal-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
-.modal-img{width:100px;height:80px;object-fit:contain;background:#f5f5f7;border-radius:12px;padding:8px;flex-shrink:0}
-.modal-title{font-size:18px;font-weight:700;color:#1d1d1f;margin-bottom:4px}
-.modal-brand{font-size:11px;font-weight:600;color:#1d74c8;text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
-.modal-type{display:inline-flex;align-items:center;gap:4px;background:#deeefb;color:#1d74c8;font-size:11px;font-weight:500;padding:3px 10px;border-radius:10px}
+.modal-img{width:100px;height:80px;object-fit:contain;background:var(--bg-soft);border-radius:12px;padding:8px;flex-shrink:0}
+.modal-title{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:4px}
+.modal-brand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
+.modal-type{display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:11px;font-weight:500;padding:3px 10px;border-radius:10px}
 .modal-specs{margin-bottom:20px}
-.modal-specs h5{font-size:12px;font-weight:600;color:#6e6e73;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;margin-top:16px}
+.modal-specs h5{font-family:'Space Grotesk',sans-serif;font-size:12px;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:1px;margin-bottom:10px;margin-top:16px}
 .modal-specs h5:first-child{margin-top:0}
-.spec-row{display:flex;justify-content:space-between;padding:8px 0;border-bottom:0.5px solid #f0f0f0;font-size:13px}
-.spec-key{font-weight:300;color:#6e6e73}
-.spec-val{font-weight:500;color:#1d1d1f;text-align:right;max-width:60%}
+.spec-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1.5px solid #f0f0f0;font-size:13px}
+.spec-key{font-weight:300;color:var(--gray)}
+.spec-val{font-weight:600;color:var(--ink);text-align:right;max-width:60%}
 .modal-btns{display:flex;gap:10px}
-.modal-btn-line{flex:1;background:#06c755;color:#fff;font-family:'Prompt',sans-serif;font-size:14px;font-weight:600;border:none;border-radius:20px;padding:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
-.modal-btn-call{flex:1;background:#1d74c8;color:#fff;font-family:'Prompt',sans-serif;font-size:14px;font-weight:600;border:none;border-radius:20px;padding:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
-.modal-close{position:absolute;top:16px;right:16px;background:#f5f5f7;border:none;border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:#6e6e73}
-.float-line{position:fixed;bottom:80px;right:20px;z-index:200;background:#06c755;color:#fff;font-family:'Prompt',sans-serif;font-size:14px;font-weight:600;padding:12px 20px;border-radius:28px;text-decoration:none;display:flex;align-items:center;gap:8px;box-shadow:0 4px 20px rgba(6,199,85,0.4);transition:transform 0.2s}
-.float-line:hover{transform:scale(1.05)}
+.modal-btn-line{flex:1;background:#06c755;color:#fff;font-family:'Prompt',sans-serif;font-size:14px;font-weight:700;border:2px solid var(--ink);border-radius:20px;padding:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.modal-btn-call{flex:1;background:var(--blue);color:#fff;font-family:'Prompt',sans-serif;font-size:14px;font-weight:700;border:2px solid var(--ink);border-radius:20px;padding:12px;cursor:pointer;display:flex;align-items:center;justify-content:center;gap:6px}
+.modal-close{position:absolute;top:16px;right:16px;background:var(--bg-soft);border:2px solid var(--line);border-radius:50%;width:32px;height:32px;display:flex;align-items:center;justify-content:center;cursor:pointer;font-size:16px;color:var(--ink)}
+
+.float-line{position:fixed;bottom:84px;right:18px;z-index:200;background:#06c755;color:#fff;font-family:'Prompt',sans-serif;font-size:14px;font-weight:700;padding:12px 20px;border-radius:28px;text-decoration:none;display:flex;align-items:center;gap:8px;border:2.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .15s}
+.float-line:hover{transform:translate(-2px,-2px)}
 @media(min-width:769px){.float-line{bottom:24px}}
 </style>
 </head>
 <body>
 
 <nav>
-  <div class="nav-logo">วสันต์ปริ้นเตอร์</div>
+  <div class="nav-logo"><span class="dot"></span>วสันต์ปริ้นเตอร์</div>
   <div class="nav-links">
     <a href="#services">บริการ</a><a href="#products">สินค้า</a><a href="#reviews">รีวิว</a><a href="#social">โซเชียล</a><a href="#contact">ติดต่อ</a>
   </div>
@@ -261,9 +330,12 @@ footer a{color:#4da3e8;text-decoration:none}
 </div>
 
 <div class="hero">
-  <div class="hero-badge"><i class="ti ti-map-pin"></i>เชียงใหม่ · ประสบการณ์กว่า 10 ปี</div>
-  <h1>ผู้ช่วยเรื่อง<br><span class="blue">เครื่องปริ้น</span></h1>
-  <div class="hero-sub">วสันต์ ปริ้นเตอร์ แอนด์ เซอร์วิส</div>
+  <div class="hero-badges">
+    <div class="hero-badge sticker b1"><i class="ti ti-map-pin"></i> เชียงใหม่</div>
+    <div class="hero-badge sticker filled b2">10+ ปี ของจริง</div>
+  </div>
+  <h1>เครื่องปริ้นพัง?<br>เรื่องของ<span class="hl">วสันต์<svg viewBox="0 0 200 14" preserveAspectRatio="none"><path d="M2 8 Q 50 2 100 8 T 198 6" stroke="#0057FF" stroke-width="6" fill="none" stroke-linecap="round"/></svg></span></h1>
+  <div class="hero-sub accent">WASAN PRINTER &amp; SERVICE</div>
   <p>เป็นกันเอง เข้าใจทุกปัญหาเครื่องปริ้น<br>ซ่อมไว ตรงจุด บริการด้วยใจ เหมือนเพื่อน</p>
   <div class="hero-btns">
     <a href="tel:0813879064" class="btn-primary"><i class="ti ti-phone"></i>081-387-9064</a>
@@ -271,24 +343,18 @@ footer a{color:#4da3e8;text-decoration:none}
   </div>
 </div>
 
-<div class="free-banner">
-  <div class="free-badge">ฟรี</div>
-  <span>ตรวจเช็คอาการเครื่องปริ้น ไม่มีค่าใช้จ่าย</span>
-  <div class="free-badge">ฟรี</div>
+<div class="marquee-wrap">
+  <div class="marquee">
+    <span>ตรวจเช็คอาการฟรี</span><span>ซ่อมไว ตรงจุด</span><span>สินค้าแท้ 100%</span><span>รับประกันงานซ่อม</span><span>CANON · EPSON · BROTHER</span>
+    <span>ตรวจเช็คอาการฟรี</span><span>ซ่อมไว ตรงจุด</span><span>สินค้าแท้ 100%</span><span>รับประกันงานซ่อม</span><span>CANON · EPSON · BROTHER</span>
+  </div>
 </div>
 
-<div class="highlights">
-  <div class="highlight-item"><i class="ti ti-tool"></i><strong>ซ่อมไว ตรงจุด</strong><span>รวดเร็ว แม่นยำ</span></div>
-  <div class="highlight-item"><i class="ti ti-certificate"></i><strong>สินค้าแท้</strong><span>คุณภาพมาตรฐาน</span></div>
-  <div class="highlight-item"><i class="ti ti-heart"></i><strong>บริการด้วยใจ</strong><span>เหมือนเพื่อน</span></div>
-  <div class="highlight-item"><i class="ti ti-shield-check"></i><strong>รับประกัน</strong><span>งานซ่อมทุกชิ้น</span></div>
-</div>
-
-<div class="exp-banner">
-  <div class="exp-item"><div class="exp-num">10+</div><div class="exp-label">ปีประสบการณ์</div></div>
-  <div class="exp-item"><div class="exp-num">3</div><div class="exp-label">แบรนด์หลัก</div></div>
-  <div class="exp-item"><div class="exp-num">1,000+</div><div class="exp-label">ลูกค้าที่ไว้วางใจ</div></div>
-  <div class="exp-item"><div class="exp-num">10+</div><div class="exp-label">บริการซ่อมทุกประเภท</div></div>
+<div class="stats">
+  <div class="stat-item"><div class="stat-num accent">10+</div><div class="stat-label">ปีประสบการณ์</div></div>
+  <div class="stat-item"><div class="stat-num accent">3</div><div class="stat-label">แบรนด์หลัก</div></div>
+  <div class="stat-item"><div class="stat-num accent">1000+</div><div class="stat-label">ลูกค้าไว้วางใจ</div></div>
+  <div class="stat-item"><div class="stat-num accent">5.0</div><div class="stat-label">คะแนนรีวิว</div></div>
 </div>
 
 <div class="section" id="services">
@@ -296,59 +362,54 @@ footer a{color:#4da3e8;text-decoration:none}
   <div class="section-title">ดูแลทุกความต้องการ</div>
   <div class="section-sub">ตั้งแต่ตรวจอาการ ซ่อม ขาย จนถึงส่งถึงบ้าน</div>
   <div class="services-grid">
-    <div class="service-card"><div class="service-icon"><i class="ti ti-stethoscope"></i></div><h3>ตรวจเช็คอาการฟรี</h3><p>วินิจฉัยปัญหาก่อน ไม่คิดค่าใช้จ่าย</p></div>
-    <div class="service-card"><div class="service-icon"><i class="ti ti-tool"></i></div><h3>ซ่อมเครื่องปริ้น</h3><p>ทุกยี่ห้อ ทั้ง Inkjet และ Laser รับประกันงาน</p></div>
-    <div class="service-card"><div class="service-icon"><i class="ti ti-device-laptop"></i></div><h3>ขายเครื่องปริ้น</h3><p>Canon, Epson, Brother ใหม่และมือสอง</p></div>
-    <div class="service-card"><div class="service-icon"><i class="ti ti-droplet"></i></div><h3>หมึกและอุปกรณ์</h3><p>Toner, Ink, ตลับหมึก ทุกรุ่น ปลีก-ส่ง</p></div>
-    <div class="service-card"><div class="service-icon"><i class="ti ti-home"></i></div><h3>บริการนอกสถานที่</h3><p>ส่งช่างซ่อมถึงบ้านหรือสำนักงาน</p></div>
-    <div class="service-card"><div class="service-icon"><i class="ti ti-receipt-tax"></i></div><h3>ออกใบกำกับภาษี</h3><p>รองรับธุรกิจที่ต้องการเอกสารทางการ</p></div>
+    <div class="service-card sticker"><div class="service-icon"><i class="ti ti-stethoscope"></i></div><h3>ตรวจเช็คอาการฟรี</h3><p>วินิจฉัยปัญหาก่อน ไม่คิดค่าใช้จ่าย</p></div>
+    <div class="service-card sticker"><div class="service-icon"><i class="ti ti-tool"></i></div><h3>ซ่อมเครื่องปริ้น</h3><p>ทุกยี่ห้อ ทั้ง Inkjet และ Laser รับประกันงาน</p></div>
+    <div class="service-card sticker"><div class="service-icon"><i class="ti ti-device-laptop"></i></div><h3>ขายเครื่องปริ้น</h3><p>Canon, Epson, Brother ใหม่และมือสอง</p></div>
+    <div class="service-card sticker"><div class="service-icon"><i class="ti ti-droplet"></i></div><h3>หมึกและอุปกรณ์</h3><p>Toner, Ink, ตลับหมึก ทุกรุ่น ปลีก-ส่ง</p></div>
+    <div class="service-card sticker"><div class="service-icon"><i class="ti ti-home"></i></div><h3>บริการนอกสถานที่</h3><p>ส่งช่างซ่อมถึงบ้านหรือสำนักงาน</p></div>
+    <div class="service-card sticker"><div class="service-icon"><i class="ti ti-receipt-tax"></i></div><h3>ออกใบกำกับภาษี</h3><p>รองรับธุรกิจที่ต้องการเอกสารทางการ</p></div>
   </div>
 </div>
 
-<div class="bestseller-section">
-  <div class="section-eyebrow">Best Seller WiFi</div>
+<div class="free-banner sticker filled" style="margin:0 20px;border-radius:18px">
+  <strong>🎉 ตรวจเช็คอาการเครื่องปริ้นฟรี ไม่มีค่าใช้จ่าย</strong>
+  <div class="free-tag">FREE CHECK</div>
+</div>
+
+<div class="section">
+  <div class="section-eyebrow">Best Seller</div>
   <div class="section-title">รุ่นขายดี มีไวไฟ</div>
   <div class="section-sub">กดดูรายละเอียดได้เลย 👇</div>
   <div class="bestseller-grid">
-    <div class="bestseller-card" onclick="openModal('canon_g3010')"><div class="bs-rank">#1</div><div class="bs-wifi">WiFi</div><img src="images/canon_g3010.jpg" alt="Canon G3010" loading="lazy"><h4>Canon G3010</h4><p>ปริ้นสี+ขาวดำ สแกน ถ่ายเอกสาร มีไวไฟ</p></div>
-    <div class="bestseller-card" onclick="openModal('epson_l3250')"><div class="bs-rank">#2</div><div class="bs-wifi">WiFi</div><img src="images/epson_l3250.jpg" alt="Epson L3250" loading="lazy"><h4>Epson L3250</h4><p>สแกนคมกว่า งานสีสด เหมาะงานเอกสาร+รูปภาพ</p></div>
-    <div class="bestseller-card" onclick="openModal('brother_t530')"><div class="bs-rank">#3</div><div class="bs-wifi">WiFi</div><img src="images/brother_t530.jpg" alt="Brother T530DW" loading="lazy"><h4>Brother T530DW</h4><p>เร็วที่สุดใน 3 รุ่น ปริ้น 2 หน้าอัตโนมัติ</p></div>
+    <div class="bestseller-card sticker" onclick="openModal('canon_g3010')"><div class="bs-rank accent">#1</div><div class="bs-wifi">WiFi</div><img src="images/canon_g3010.jpg" alt="Canon G3010" loading="lazy"><h4>Canon G3010</h4><p>ปริ้นสี+ขาวดำ สแกน ถ่ายเอกสาร มีไวไฟ</p></div>
+    <div class="bestseller-card sticker" onclick="openModal('epson_l3250')"><div class="bs-rank accent">#2</div><div class="bs-wifi">WiFi</div><img src="images/epson_l3250.jpg" alt="Epson L3250" loading="lazy"><h4>Epson L3250</h4><p>สแกนคมกว่า งานสีสด เหมาะงานเอกสาร+รูปภาพ</p></div>
+    <div class="bestseller-card sticker" onclick="openModal('brother_t530')"><div class="bs-rank accent">#3</div><div class="bs-wifi">WiFi</div><img src="images/brother_t530.jpg" alt="Brother T530DW" loading="lazy"><h4>Brother T530DW</h4><p>เร็วที่สุดใน 3 รุ่น ปริ้น 2 หน้าอัตโนมัติ</p></div>
   </div>
 </div>
 
-<div class="compare-section">
-  <div class="section-eyebrow">เปรียบเทียบ</div>
-  <div class="section-title">Canon vs Epson</div>
-  <div class="section-sub">ต่างกันยังไง? เลือกแบบไหนดี?</div>
-  <div class="compare-grid">
-    <div class="compare-card canon"><div class="compare-brand">Canon</div><div class="compare-tag">ใช้งานทั่วไป · รูปภาพ</div><ul class="compare-list"><li>ซ่อมบำรุงรักษาง่าย อะไหล่ทนทาน</li><li>ใช้งานง่าย มือใหม่ก็ใช้ได้</li><li>งานภาพออกโทนสว่าง สดใส</li><li>เหมาะบ้าน / ร้านเล็ก</li></ul></div>
-    <div class="compare-card epson"><div class="compare-brand">Epson</div><div class="compare-tag">งานหนัก · ความทนทาน</div><ul class="compare-list"><li>ระบบหัวพิมพ์แม่นยำ สีสันคมชัด</li><li>ใช้งานหนักได้ดีกว่า Canon</li><li>งานภาพออกโทนเข้ม</li><li>เหมาะงานเอกสาร + รูปภาพ</li></ul></div>
-  </div>
-</div>
-
-<div class="finder-section">
-  <div class="section-eyebrow">Find Your Perfect Printer</div>
+<div class="section soft">
+  <div class="section-eyebrow">Find Your Printer</div>
   <div class="section-title">รุ่นไหนเหมาะกับคุณ?</div>
   <div class="section-sub">กดดูรายละเอียดได้เลย 👇</div>
   <div class="finder-grid">
-    <div class="finder-card" onclick="openModal('brother_t230')"><img src="images/brother_t230.jpg" alt="Brother T230" loading="lazy"><div class="finder-model">T230</div><div class="finder-tag">รุ่นเริ่มต้น คุ้มค่า</div><p>บ้าน · นักเรียน · พิมพ์ไม่บ่อย</p></div>
-    <div class="finder-card" onclick="openModal('brother_t530')"><img src="images/brother_t530.jpg" alt="Brother T530DW" loading="lazy"><div class="finder-model">T530</div><div class="finder-tag">ครบเครื่อง WiFi</div><p>Home Office · ร้านค้า · WiFi</p></div>
-    <div class="finder-card" onclick="openModal('brother_t730')"><img src="images/brother_t730.jpg" alt="Brother T730DW" loading="lazy"><div class="finder-model">T730</div><div class="finder-tag">ADF · สแกนหลายหน้า</div><p>สำนักงาน · บริษัท · งานปริมาณมาก</p></div>
+    <div class="finder-card sticker" onclick="openModal('brother_t230')"><img src="images/brother_t230.jpg" alt="Brother T230" loading="lazy"><div class="finder-model accent">T230</div><div class="finder-tag">รุ่นเริ่มต้น คุ้มค่า</div><p>บ้าน · นักเรียน · พิมพ์ไม่บ่อย</p></div>
+    <div class="finder-card sticker" onclick="openModal('brother_t530')"><img src="images/brother_t530.jpg" alt="Brother T530DW" loading="lazy"><div class="finder-model accent">T530</div><div class="finder-tag">ครบเครื่อง WiFi</div><p>Home Office · ร้านค้า · WiFi</p></div>
+    <div class="finder-card sticker" onclick="openModal('brother_t730')"><img src="images/brother_t730.jpg" alt="Brother T730DW" loading="lazy"><div class="finder-model accent">T730</div><div class="finder-tag">ADF · สแกนหลายหน้า</div><p>สำนักงาน · บริษัท · งานปริมาณมาก</p></div>
   </div>
 </div>
 
-<div style="background:#f5f5f7" id="products">
-  <div style="padding:52px 0 0"><div style="padding:0 24px">
+<div class="products-wrap" id="products">
+  <div style="padding:0 20px">
     <div class="section-eyebrow">สินค้าและบริการ</div>
     <div class="section-title">เลือกดูได้เลย</div>
     <div class="section-sub">กดที่การ์ดเพื่อดูรายละเอียดเพิ่มเติม 👇</div>
-  </div></div>
+  </div>
   <div class="tab-nav">
     <button class="tab-btn active" onclick="switchTab('canon',this)">🖨️ Canon</button>
     <button class="tab-btn" onclick="switchTab('epson',this)">🖨️ Epson</button>
     <button class="tab-btn" onclick="switchTab('brother',this)">🖨️ Brother</button>
     <button class="tab-btn" onclick="switchTab('brothera3',this)">🅰️ Brother A3</button>
-    <button class="tab-btn" onclick="switchTab('ink',this)">🖋️ หมึก & ตลับ</button>
+    <button class="tab-btn" onclick="switchTab('ink',this)">🖋️ หมึก &amp; ตลับ</button>
     <button class="tab-btn" onclick="switchTab('paper',this)">📄 กระดาษ</button>
     <button class="tab-btn" onclick="switchTab('repair',this)">🔧 งานซ่อม</button>
   </div>
@@ -356,14 +417,14 @@ footer a{color:#4da3e8;text-decoration:none}
   <div class="tab-panel active" id="tab-canon">
     <div class="sub-label">Inkjet</div>
     <div class="product-grid">
-      <div class="product-card" onclick="openModal('canon_g2010')"><img class="product-img" src="images/canon_g2010.jpg" alt="Canon G2010" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">PIXMA G2010</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('canon_g3010')"><img class="product-img" src="images/canon_g3010.jpg" alt="Canon G3010" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">PIXMA G3010</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>Inkjet · WiFi</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('canon_ix6770')"><img class="product-img" src="images/canon_ix6770.jpg" alt="Canon iX6770" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6770</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('canon_ix6770')"><img class="product-img" src="images/canon_ix6870.jpg" alt="Canon iX6870" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6870</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('canon_g2010')"><img class="product-img" src="images/canon_g2010.jpg" alt="Canon G2010" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">PIXMA G2010</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('canon_g3010')"><img class="product-img" src="images/canon_g3010.jpg" alt="Canon G3010" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">PIXMA G3010</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>Inkjet · WiFi</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('canon_ix6770')"><img class="product-img" src="images/canon_ix6770.jpg" alt="Canon iX6770" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6770</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('canon_ix6770')"><img class="product-img" src="images/canon_ix6870.jpg" alt="Canon iX6870" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6870</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
     </div>
     <div class="sub-label">Laser</div>
     <div class="product-grid">
-      <div class="product-card" onclick="openModal('canon_lbp6030')"><img class="product-img" src="images/canon_lbp6030.jpg" alt="Canon LBP6030" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">LBP6030</div><div class="product-type"><i class="ti ti-file-text" style="font-size:11px"></i>Laser · Mono</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('canon_lbp6030')"><img class="product-img" src="images/canon_lbp6030.jpg" alt="Canon LBP6030" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">LBP6030</div><div class="product-type"><i class="ti ti-file-text" style="font-size:11px"></i>Laser · Mono</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
     </div>
     <div class="cta-bar"><div><p>สนใจสอบถามเพิ่ม?</p><span>มีทั้งใหม่และมือสอง</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
@@ -371,10 +432,10 @@ footer a{color:#4da3e8;text-decoration:none}
   <div class="tab-panel" id="tab-epson">
     <div class="sub-label">Inkjet — EcoTank Series</div>
     <div class="product-grid">
-      <div class="product-card" onclick="openModal('epson_l3210')"><img class="product-img" src="images/epson_l3210.jpg" alt="Epson L3210" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L3210</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('epson_l3210')"><img class="product-img" src="images/epson_l3210.jpg" alt="Epson L3216" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L3216</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('epson_l3256')"><img class="product-img" src="images/epson_l3256.jpg" alt="Epson L3256" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L3256</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>Inkjet · WiFi</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('epson_l5290')"><img class="product-img" src="images/epson_l5290.jpg" alt="Epson L5290" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L5290</div><div class="product-type"><i class="ti ti-copy" style="font-size:11px"></i>WiFi · ADF</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('epson_l3210')"><img class="product-img" src="images/epson_l3210.jpg" alt="Epson L3210" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L3210</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('epson_l3210')"><img class="product-img" src="images/epson_l3210.jpg" alt="Epson L3216" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L3216</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('epson_l3256')"><img class="product-img" src="images/epson_l3256.jpg" alt="Epson L3256" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L3256</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>Inkjet · WiFi</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('epson_l5290')"><img class="product-img" src="images/epson_l5290.jpg" alt="Epson L5290" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L5290</div><div class="product-type"><i class="ti ti-copy" style="font-size:11px"></i>WiFi · ADF</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
     </div>
     <div class="cta-bar"><div><p>สนใจสอบถามเพิ่ม?</p><span>มีทั้งใหม่และมือสอง</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
@@ -382,26 +443,26 @@ footer a{color:#4da3e8;text-decoration:none}
   <div class="tab-panel" id="tab-brother">
     <div class="sub-label">Inkjet — InkBenefit Tank</div>
     <div class="product-grid">
-      <div class="product-card" onclick="openModal('brother_t230')"><img class="product-img" src="images/brother_t230.jpg" alt="Brother T230" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">DCP-T230</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('brother_t430')"><img class="product-img" src="images/brother_t430.jpg" alt="Brother T430W" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">DCP-T430W</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>Inkjet · WiFi</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('brother_t530')"><img class="product-img" src="images/brother_t530.jpg" alt="Brother T530DW" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">MFC-T530DW</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>WiFi · Duplex</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('brother_t730')"><img class="product-img" src="images/brother_t730.jpg" alt="Brother T730DW" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">MFC-T730DW</div><div class="product-type"><i class="ti ti-copy" style="font-size:11px"></i>WiFi · ADF</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('brother_t230')"><img class="product-img" src="images/brother_t230.jpg" alt="Brother T230" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">DCP-T230</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('brother_t430')"><img class="product-img" src="images/brother_t430.jpg" alt="Brother T430W" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">DCP-T430W</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>Inkjet · WiFi</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('brother_t530')"><img class="product-img" src="images/brother_t530.jpg" alt="Brother T530DW" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">MFC-T530DW</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>WiFi · Duplex</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('brother_t730')"><img class="product-img" src="images/brother_t730.jpg" alt="Brother T730DW" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">MFC-T730DW</div><div class="product-type"><i class="ti ti-copy" style="font-size:11px"></i>WiFi · ADF</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
     </div>
     <div class="sub-label">Laser — ความเร็วสูง</div>
     <div class="product-grid">
-      <div class="product-card" onclick="openModal('brother_hl1110')"><img class="product-img" src="images/brother_hl1110.jpg" alt="Brother HL-1110" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">HL-1110</div><div class="product-type"><i class="ti ti-file-text" style="font-size:11px"></i>Laser · Mono</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('brother_mfcl2700d')"><img class="product-img" src="images/brother_mfcl2700d.jpg" alt="Brother MFC-L2700D" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">MFC-L2700D</div><div class="product-type"><i class="ti ti-copy" style="font-size:11px"></i>Laser · Duplex</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card" onclick="openModal('brother_hl3560')"><img class="product-img" src="images/brother_hl3560cdw.jpg" alt="Brother HL-3560CDW" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">HL-3560CDW</div><div class="product-type"><i class="ti ti-palette" style="font-size:11px"></i>Laser · Color</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('brother_hl1110')"><img class="product-img" src="images/brother_hl1110.jpg" alt="Brother HL-1110" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">HL-1110</div><div class="product-type"><i class="ti ti-file-text" style="font-size:11px"></i>Laser · Mono</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('brother_mfcl2700d')"><img class="product-img" src="images/brother_mfcl2700d.jpg" alt="Brother MFC-L2700D" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">MFC-L2700D</div><div class="product-type"><i class="ti ti-copy" style="font-size:11px"></i>Laser · Duplex</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('brother_hl3560')"><img class="product-img" src="images/brother_hl3560cdw.jpg" alt="Brother HL-3560CDW" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">HL-3560CDW</div><div class="product-type"><i class="ti ti-palette" style="font-size:11px"></i>Laser · Color</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
     </div>
     <div class="cta-bar"><div><p>สนใจสอบถามเพิ่ม?</p><span>มีทั้งใหม่และมือสอง</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
 
   <div class="tab-panel" id="tab-brothera3">
-    <div class="sub-label">TOP SELLER — Brother A3 Series</div>
+    <div class="sub-label">Top Seller — Brother A3 Series</div>
     <div class="a3-grid">
-      <div class="a3-card" onclick="openModal('brother_j2340')"><img src="images/brother_t730.jpg" alt="Brother MFC-J2340DW" loading="lazy"><div class="a3-info"><h4>Brother MFC-J2340DW</h4><p>ปริ้น A3 · ถ่ายเอกสาร/สแกน A4 · ถาดใส่กระดาษ 1 ถาด</p><div class="tap-hint" style="justify-content:flex-start;margin-top:6px"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div></div>
-      <div class="a3-card" onclick="openModal('brother_j2740')"><img src="images/brother_t730.jpg" alt="Brother MFC-J2740DW" loading="lazy"><div class="a3-info"><h4>Brother MFC-J2740DW</h4><p>ปริ้น A3 · ถ่ายเอกสาร/สแกน A4 · ถาดใส่กระดาษ 2 ถาด</p><div class="tap-hint" style="justify-content:flex-start;margin-top:6px"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div></div>
-      <div class="a3-card" onclick="openModal('brother_j3540')"><img src="images/brother_t730.jpg" alt="Brother MFC-J3540DW" loading="lazy"><div class="a3-info"><h4>Brother MFC-J3540DW</h4><p>ปริ้น A3 · ถ่ายเอกสาร/สแกน A3 · ถาดใส่กระดาษ 1 ถาด</p><div class="tap-hint" style="justify-content:flex-start;margin-top:6px"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div></div>
+      <div class="a3-card sticker" onclick="openModal('brother_j2340')"><img src="images/brother_t730.jpg" alt="Brother MFC-J2340DW" loading="lazy"><div class="a3-info"><h4>Brother MFC-J2340DW</h4><p>ปริ้น A3 · ถ่ายเอกสาร/สแกน A4 · ถาดใส่กระดาษ 1 ถาด</p><div class="tap-hint" style="justify-content:flex-start;margin-top:6px"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div></div>
+      <div class="a3-card sticker" onclick="openModal('brother_j2740')"><img src="images/brother_t730.jpg" alt="Brother MFC-J2740DW" loading="lazy"><div class="a3-info"><h4>Brother MFC-J2740DW</h4><p>ปริ้น A3 · ถ่ายเอกสาร/สแกน A4 · ถาดใส่กระดาษ 2 ถาด</p><div class="tap-hint" style="justify-content:flex-start;margin-top:6px"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div></div>
+      <div class="a3-card sticker" onclick="openModal('brother_j3540')"><img src="images/brother_t730.jpg" alt="Brother MFC-J3540DW" loading="lazy"><div class="a3-info"><h4>Brother MFC-J3540DW</h4><p>ปริ้น A3 · ถ่ายเอกสาร/สแกน A3 · ถาดใส่กระดาษ 1 ถาด</p><div class="tap-hint" style="justify-content:flex-start;margin-top:6px"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div></div>
     </div>
     <div class="cta-bar"><div><p>สนใจ Brother A3?</p><span>ติดต่อสอบถามรายละเอียดได้เลย</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
@@ -417,45 +478,56 @@ footer a{color:#4da3e8;text-decoration:none}
   <div class="tab-panel" id="tab-paper">
     <div class="sub-label">กระดาษ A4 — Idea by SCGP</div>
     <div class="paper-grid">
-      <div class="paper-card" onclick="openModal('idea_pack')"><img src="images/idea_pack.jpg" alt="Idea A4 Pack" loading="lazy" class="paper-img"><div class="paper-brand">Idea by SCGP</div><div class="paper-name">Idea Work A4</div><div class="paper-type"><i class="ti ti-stack" style="font-size:11px"></i>Pack · 500 แผ่น</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="paper-card" onclick="openModal('idea_box')"><img src="images/idea_box.jpg" alt="Idea A4 Box" loading="lazy" class="paper-img"><div class="paper-brand">Idea by SCGP</div><div class="paper-name">Idea Work A4</div><div class="paper-type"><i class="ti ti-box" style="font-size:11px"></i>ลัง · 5 รีม</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="paper-card sticker" onclick="openModal('idea_pack')"><img src="images/idea_pack.jpg" alt="Idea A4 Pack" loading="lazy" class="paper-img"><div class="paper-brand">Idea by SCGP</div><div class="paper-name">Idea Work A4</div><div class="paper-type"><i class="ti ti-stack" style="font-size:11px"></i>Pack · 500 แผ่น</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="paper-card sticker" onclick="openModal('idea_box')"><img src="images/idea_box.jpg" alt="Idea A4 Box" loading="lazy" class="paper-img"><div class="paper-brand">Idea by SCGP</div><div class="paper-name">Idea Work A4</div><div class="paper-type"><i class="ti ti-box" style="font-size:11px"></i>ลัง · 5 รีม</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
     </div>
     <div class="sub-label">กระดาษ A4 — Double A</div>
     <div class="paper-grid">
-      <div class="paper-card" onclick="openModal('doublea_pack')"><img src="images/doublea_pack.jpg" alt="Double A Pack" loading="lazy" class="paper-img"><div class="paper-brand">Double A</div><div class="paper-name">Double A Premium</div><div class="paper-type"><i class="ti ti-stack" style="font-size:11px"></i>Pack · 500 แผ่น</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="paper-card" onclick="openModal('doublea_box')"><img src="images/doublea_box.jpg" alt="Double A Box" loading="lazy" class="paper-img"><div class="paper-brand">Double A</div><div class="paper-name">Double A Premium</div><div class="paper-type"><i class="ti ti-box" style="font-size:11px"></i>ลัง · 5 รีม</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="paper-card sticker" onclick="openModal('doublea_pack')"><img src="images/doublea_pack.jpg" alt="Double A Pack" loading="lazy" class="paper-img"><div class="paper-brand">Double A</div><div class="paper-name">Double A Premium</div><div class="paper-type"><i class="ti ti-stack" style="font-size:11px"></i>Pack · 500 แผ่น</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="paper-card sticker" onclick="openModal('doublea_box')"><img src="images/doublea_box.jpg" alt="Double A Box" loading="lazy" class="paper-img"><div class="paper-brand">Double A</div><div class="paper-name">Double A Premium</div><div class="paper-type"><i class="ti ti-box" style="font-size:11px"></i>ลัง · 5 รีม</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
     </div>
     <div class="cta-bar"><div><p>สั่งกระดาษทั้งปลีกและส่ง</p><span>มีพร้อมส่งทันที</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
 
   <div class="tab-panel" id="tab-repair">
     <div class="repair-grid">
-      <div class="repair-card"><div class="repair-icon"><i class="ti ti-droplet"></i></div><div><h4>เติมหมึก</h4><p>เติมหมึกทุกยี่ห้อ ทั้งแท้และเทียบ</p></div></div>
-      <div class="repair-card"><div class="repair-icon"><i class="ti ti-replace"></i></div><div><h4>เปลี่ยนตลับหมึก</h4><p>เปลี่ยนตลับ Ink และ Toner ทุกรุ่น</p></div></div>
-      <div class="repair-card"><div class="repair-icon"><i class="ti ti-wash"></i></div><div><h4>ล้างหัวพิมพ์</h4><p>แก้ปัญหาหมึกอุดตัน สีไม่ครบ</p></div></div>
-      <div class="repair-card"><div class="repair-icon"><i class="ti ti-sparkles"></i></div><div><h4>ทำความสะอาด</h4><p>ทำความสะอาดภายในเครื่องทั้งระบบ</p></div></div>
-      <div class="repair-card"><div class="repair-icon"><i class="ti ti-engine"></i></div><div><h4>เปลี่ยนชุดปั๊ม</h4><p>ซ่อมระบบปั๊มหมึกและท่อน้ำหมึก</p></div></div>
-      <div class="repair-card"><div class="repair-icon"><i class="ti ti-printer"></i></div><div><h4>เปลี่ยนหัวพิมพ์</h4><p>เปลี่ยนหัวพิมพ์ใหม่ทุกยี่ห้อ</p></div></div>
-      <div class="repair-card"><div class="repair-icon"><i class="ti ti-file-import"></i></div><div><h4>เปลี่ยนชุดดูดกระดาษ</h4><p>แก้ปัญหากระดาษติด ดูดไม่ขึ้น</p></div></div>
-      <div class="repair-card"><div class="repair-icon"><i class="ti ti-bolt"></i></div><div><h4>เปลี่ยน Power Supply</h4><p>ซ่อมระบบไฟเครื่องไม่ติด</p></div></div>
-      <div class="repair-card"><div class="repair-icon"><i class="ti ti-layout-grid"></i></div><div><h4>เปลี่ยนแผ่นซับหมึก</h4><p>แก้ปัญหา waste ink เต็ม</p></div></div>
-      <div class="repair-card"><div class="repair-icon"><i class="ti ti-refresh"></i></div><div><h4>เคลียร์ความจำ</h4><p>รีเซ็ตค่าเครื่อง / reset waste ink</p></div></div>
+      <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-droplet"></i></div><div><h4>เติมหมึก</h4><p>เติมหมึกทุกยี่ห้อ ทั้งแท้และเทียบ</p></div></div>
+      <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-replace"></i></div><div><h4>เปลี่ยนตลับหมึก</h4><p>เปลี่ยนตลับ Ink และ Toner ทุกรุ่น</p></div></div>
+      <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-wash"></i></div><div><h4>ล้างหัวพิมพ์</h4><p>แก้ปัญหาหมึกอุดตัน สีไม่ครบ</p></div></div>
+      <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-sparkles"></i></div><div><h4>ทำความสะอาด</h4><p>ทำความสะอาดภายในเครื่องทั้งระบบ</p></div></div>
+      <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-engine"></i></div><div><h4>เปลี่ยนชุดปั๊ม</h4><p>ซ่อมระบบปั๊มหมึกและท่อน้ำหมึก</p></div></div>
+      <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-printer"></i></div><div><h4>เปลี่ยนหัวพิมพ์</h4><p>เปลี่ยนหัวพิมพ์ใหม่ทุกยี่ห้อ</p></div></div>
+      <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-file-import"></i></div><div><h4>เปลี่ยนชุดดูดกระดาษ</h4><p>แก้ปัญหากระดาษติด ดูดไม่ขึ้น</p></div></div>
+      <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-bolt"></i></div><div><h4>เปลี่ยน Power Supply</h4><p>ซ่อมระบบไฟเครื่องไม่ติด</p></div></div>
+      <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-layout-grid"></i></div><div><h4>เปลี่ยนแผ่นซับหมึก</h4><p>แก้ปัญหา waste ink เต็ม</p></div></div>
+      <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-refresh"></i></div><div><h4>เคลียร์ความจำ</h4><p>รีเซ็ตค่าเครื่อง / reset waste ink</p></div></div>
     </div>
     <div class="cta-bar"><div><p>ตรวจเช็คอาการฟรี!</p><span>บอกอาการ แจ้งราคาก่อนซ่อมทุกครั้ง</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
 </div>
 
-<div class="collection-section">
+<div class="section">
+  <div class="section-eyebrow">เปรียบเทียบ</div>
+  <div class="section-title">Canon vs Epson</div>
+  <div class="section-sub">ต่างกันยังไง? เลือกแบบไหนดี?</div>
+  <div class="compare-grid">
+    <div class="compare-card canon sticker"><div class="compare-brand">Canon</div><div class="compare-tag">ใช้งานทั่วไป · รูปภาพ</div><ul class="compare-list"><li>ซ่อมบำรุงรักษาง่าย อะไหล่ทนทาน</li><li>ใช้งานง่าย มือใหม่ก็ใช้ได้</li><li>งานภาพออกโทนสว่าง สดใส</li><li>เหมาะบ้าน / ร้านเล็ก</li></ul></div>
+    <div class="compare-vs accent">VS</div>
+    <div class="compare-card epson sticker"><div class="compare-brand">Epson</div><div class="compare-tag">งานหนัก · ความทนทาน</div><ul class="compare-list"><li>ระบบหัวพิมพ์แม่นยำ สีสันคมชัด</li><li>ใช้งานหนักได้ดีกว่า Canon</li><li>งานภาพออกโทนเข้ม</li><li>เหมาะงานเอกสาร + รูปภาพ</li></ul></div>
+  </div>
+</div>
+
+<div class="section soft">
   <div class="section-eyebrow">Collection</div>
   <div class="section-title">รู้จักสินค้าให้มากขึ้น</div>
   <div class="section-sub">เลื่อนดูได้ · กดรูปเพื่อขยายเต็มจอ 👇</div>
   <div class="collection-slider" id="collectionSlider">
-    <div class="collection-card" onclick="openLightbox(0)"><img src="images/poster_brother_collection.png" alt="Brother Collection" loading="lazy"></div>
-    <div class="collection-card" onclick="openLightbox(1)"><img src="images/poster_epson_l5290.png" alt="Epson L5290" loading="lazy"></div>
-    <div class="collection-card" onclick="openLightbox(2)"><img src="images/poster_brother_who.png" alt="Brother เหมาะกับใคร" loading="lazy"></div>
-    <div class="collection-card" onclick="openLightbox(3)"><img src="images/poster_epson_l3210.png" alt="Epson L3210" loading="lazy"></div>
-    <div class="collection-card" onclick="openLightbox(4)"><img src="images/poster_brother_t430.png" alt="Brother T430" loading="lazy"></div>
-    <div class="collection-card" onclick="openLightbox(5)"><img src="images/poster_brother_t730.png" alt="Brother T730" loading="lazy"></div>
+    <div class="collection-card sticker" onclick="openLightbox(0)"><img src="images/poster_brother_collection.png" alt="Brother Collection" loading="lazy"></div>
+    <div class="collection-card sticker" onclick="openLightbox(1)"><img src="images/poster_epson_l5290.png" alt="Epson L5290" loading="lazy"></div>
+    <div class="collection-card sticker" onclick="openLightbox(2)"><img src="images/poster_brother_who.png" alt="Brother เหมาะกับใคร" loading="lazy"></div>
+    <div class="collection-card sticker" onclick="openLightbox(3)"><img src="images/poster_epson_l3210.png" alt="Epson L3210" loading="lazy"></div>
+    <div class="collection-card sticker" onclick="openLightbox(4)"><img src="images/poster_brother_t430.png" alt="Brother T430" loading="lazy"></div>
+    <div class="collection-card sticker" onclick="openLightbox(5)"><img src="images/poster_brother_t730.png" alt="Brother T730" loading="lazy"></div>
   </div>
   <div class="slider-dots">
     <div class="slider-dot active" onclick="scrollToCard(0)"></div>
@@ -474,45 +546,45 @@ footer a{color:#4da3e8;text-decoration:none}
   <button class="lightbox-next" onclick="nextLightbox()">›</button>
 </div>
 
-<div class="promise-section">
+<div class="section">
   <div class="section-eyebrow">ทำไมต้องเลือกวสันต์</div>
   <div class="section-title">บริการไว สไตล์วสันต์</div>
   <div class="promise-grid">
-    <div class="promise-card"><div class="promise-num">01</div><div><h4>เป็นกันเอง</h4><p>เข้าใจทุกปัญหา ไม่ว่าจะง่ายหรือยากแค่ไหน</p></div></div>
-    <div class="promise-card"><div class="promise-num">02</div><div><h4>ตรงไปตรงมา</h4><p>แจ้งราคาก่อนซ่อม ไม่มีค่าใช้จ่ายซ่อนเร้น</p></div></div>
-    <div class="promise-card"><div class="promise-num">03</div><div><h4>มีคุณภาพ</h4><p>ใช้อะไหล่แท้และหมึกคุณภาพมาตรฐาน</p></div></div>
-    <div class="promise-card"><div class="promise-num">04</div><div><h4>รับประกันงานซ่อม</h4><p>มั่นใจได้ทุกงาน มีปัญหาแจ้งได้เลย</p></div></div>
+    <div class="promise-card sticker"><div class="promise-icon"><i class="ti ti-mood-smile"></i></div><h4>เป็นกันเอง</h4><p>เข้าใจทุกปัญหา ไม่ว่าจะง่ายหรือยากแค่ไหน</p></div>
+    <div class="promise-card sticker"><div class="promise-icon"><i class="ti ti-message-2"></i></div><h4>ตรงไปตรงมา</h4><p>แจ้งราคาก่อนซ่อม ไม่มีค่าใช้จ่ายซ่อนเร้น</p></div>
+    <div class="promise-card sticker"><div class="promise-icon"><i class="ti ti-certificate"></i></div><h4>มีคุณภาพ</h4><p>ใช้อะไหล่แท้และหมึกคุณภาพมาตรฐาน</p></div>
+    <div class="promise-card sticker"><div class="promise-icon"><i class="ti ti-shield-check"></i></div><h4>รับประกันงานซ่อม</h4><p>มั่นใจได้ทุกงาน มีปัญหาแจ้งได้เลย</p></div>
   </div>
 </div>
 
-<div class="reviews-section" id="reviews">
+<div class="section soft" id="reviews">
   <div class="section-eyebrow">รีวิวจากลูกค้า</div>
   <div class="section-title">ลูกค้าพูดถึงเรา</div>
   <div class="section-sub">ความประทับใจจากลูกค้าจริง</div>
   <div class="reviews-grid">
-    <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">บริการดีมาก พนักงานเป็นกันเอง ซ่อมเสร็จไวมาก ราคาโอเค จะมาใช้บริการอีกแน่นอน</div><div class="review-author"><div class="review-avatar">ส</div><div><div class="review-name">สมหญิง ใจดี</div><div class="review-source">Google Maps</div></div></div></div>
-    <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">แวะมาซื้อหมึก ราคาถูกกว่าที่อื่น มีครบทุกรุ่น พนักงานแนะนำได้ดีมาก ประทับใจมากครับ</div><div class="review-author"><div class="review-avatar">ว</div><div><div class="review-name">วิชัย ประสิทธิ์</div><div class="review-source">Google Maps</div></div></div></div>
-    <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">เครื่องปริ้นพัง โทรถามแล้วมาส่งซ่อมเลย ตรวจอาการฟรี แจ้งราคาก่อนซ่อม ไม่บวกเพิ่ม ดีมากค่ะ</div><div class="review-author"><div class="review-avatar">น</div><div><div class="review-name">นภา รักษ์ดี</div><div class="review-source">Google Maps</div></div></div></div>
-    <div class="review-card"><div class="review-stars">★★★★★</div><div class="review-text">ร้านนี้ดีมาก อธิบายปัญหาให้เข้าใจง่าย ซ่อมเสร็จรวดเร็ว รับประกันงานซ่อมด้วย แนะนำเลย</div><div class="review-author"><div class="review-avatar">ป</div><div><div class="review-name">ปรีชา สุขใจ</div><div class="review-source">Google Maps</div></div></div></div>
+    <div class="review-card sticker"><div class="review-stars">★★★★★</div><div class="review-text">บริการดีมาก พนักงานเป็นกันเอง ซ่อมเสร็จไวมาก ราคาโอเค จะมาใช้บริการอีกแน่นอน</div><div class="review-author"><div class="review-avatar">ส</div><div><div class="review-name">สมหญิง ใจดี</div><div class="review-source">Google Maps</div></div></div></div>
+    <div class="review-card sticker"><div class="review-stars">★★★★★</div><div class="review-text">แวะมาซื้อหมึก ราคาถูกกว่าที่อื่น มีครบทุกรุ่น พนักงานแนะนำได้ดีมาก ประทับใจมากครับ</div><div class="review-author"><div class="review-avatar">ว</div><div><div class="review-name">วิชัย ประสิทธิ์</div><div class="review-source">Google Maps</div></div></div></div>
+    <div class="review-card sticker"><div class="review-stars">★★★★★</div><div class="review-text">เครื่องปริ้นพัง โทรถามแล้วมาส่งซ่อมเลย ตรวจอาการฟรี แจ้งราคาก่อนซ่อม ไม่บวกเพิ่ม ดีมากค่ะ</div><div class="review-author"><div class="review-avatar">น</div><div><div class="review-name">นภา รักษ์ดี</div><div class="review-source">Google Maps</div></div></div></div>
+    <div class="review-card sticker"><div class="review-stars">★★★★★</div><div class="review-text">ร้านนี้ดีมาก อธิบายปัญหาให้เข้าใจง่าย ซ่อมเสร็จรวดเร็ว รับประกันงานซ่อมด้วย แนะนำเลย</div><div class="review-author"><div class="review-avatar">ป</div><div><div class="review-name">ปรีชา สุขใจ</div><div class="review-source">Google Maps</div></div></div></div>
   </div>
   <div class="review-footer">
     <div class="google-badge"><span>⭐ 5.0 · Google Maps</span><a href="https://www.google.com/maps/place/data=!4m2!3m1!1s0x0:0xf1c85a0f68cc3f26" target="_blank" rel="noopener">ดูรีวิวทั้งหมด →</a></div>
-    <a href="https://www.google.com/maps/place/data=!4m2!3m1!1s0x0:0xf1c85a0f68cc3f26" target="_blank" rel="noopener" style="font-size:13px;color:#1d74c8;text-decoration:none;font-weight:500">+ ฝากรีวิวให้เราด้วยนะคะ 🙏</a>
+    <a href="https://www.google.com/maps/place/data=!4m2!3m1!1s0x0:0xf1c85a0f68cc3f26" target="_blank" rel="noopener" style="font-size:13px;color:var(--blue);text-decoration:none;font-weight:700">+ ฝากรีวิวให้เราด้วยนะคะ 🙏</a>
   </div>
 </div>
 
-<div class="facebook-section" id="social">
+<div class="section" id="social">
   <div class="section-eyebrow">ติดตามเรา</div>
   <div class="section-title">โซเชียลมีเดีย</div>
   <div class="section-sub">อัปเดตข่าวสาร โปรโมชั่น และโพสต์ล่าสุด</div>
   <div class="fb-widget-wrap">
-    <div class="fb-like-wrap"><i class="ti ti-brand-facebook" style="font-size:28px;color:#1877f2;flex-shrink:0"></i><div><div style="font-size:14px;font-weight:600;color:#1d1d1f;margin-bottom:6px">บริษัทวสันต์ปริ้นเตอร์</div><div class="fb-like" data-href="https://www.facebook.com/p/บริษัทวสันต์ปริ้นเตอร์-100036868253663" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div></div></div>
+    <div class="fb-like-wrap sticker"><i class="ti ti-brand-facebook" style="font-size:28px;color:#1877f2;flex-shrink:0"></i><div><div style="font-size:14px;font-weight:700;color:var(--ink);margin-bottom:6px">บริษัทวสันต์ปริ้นเตอร์</div><div class="fb-like" data-href="https://www.facebook.com/p/บริษัทวสันต์ปริ้นเตอร์-100036868253663" data-layout="button_count" data-action="like" data-size="large" data-share="true"></div></div></div>
     <div class="fb-page-wrap"><div class="fb-page" data-href="https://www.facebook.com/p/บริษัทวสันต์ปริ้นเตอร์-100036868253663" data-tabs="timeline" data-width="340" data-height="400" data-small-header="true" data-adapt-container-width="true" data-hide-cover="false" data-show-facepile="true"></div></div>
     <div class="social-links">
-      <a href="https://www.facebook.com/p/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%A9%E0%B8%B1%E0%B8%97%E0%B8%A7%E0%B8%AA%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-100036868253663" target="_blank" rel="noopener" class="social-card"><div class="social-icon fb"><i class="ti ti-brand-facebook"></i></div><div><h4>Facebook</h4><p>บริษัทวสันต์ปริ้นเตอร์</p></div></a>
-      <a href="https://www.tiktok.com/@wasanprinter" target="_blank" rel="noopener" class="social-card"><div class="social-icon tt"><i class="ti ti-brand-tiktok"></i></div><div><h4>TikTok</h4><p>@wasanprinter</p></div></a>
-      <a href="https://line.me/ti/p/~Printer2020" target="_blank" rel="noopener" class="social-card"><div class="social-icon line"><i class="ti ti-message-circle"></i></div><div><h4>LINE</h4><p>Printer2020</p></div></a>
-      <a href="tel:0813879064" class="social-card"><div class="social-icon ph"><i class="ti ti-phone"></i></div><div><h4>โทรศัพท์</h4><p>081-387-9064</p></div></a>
+      <a href="https://www.facebook.com/p/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%A9%E0%B8%B1%E0%B8%97%E0%B8%A7%E0%B8%AA%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-100036868253663" target="_blank" rel="noopener" class="social-card sticker"><div class="social-icon fb"><i class="ti ti-brand-facebook"></i></div><div><h4>Facebook</h4><p>บริษัทวสันต์ปริ้นเตอร์</p></div></a>
+      <a href="https://www.tiktok.com/@wasanprinter" target="_blank" rel="noopener" class="social-card sticker"><div class="social-icon tt"><i class="ti ti-brand-tiktok"></i></div><div><h4>TikTok</h4><p>@wasanprinter</p></div></a>
+      <a href="https://line.me/ti/p/~Printer2020" target="_blank" rel="noopener" class="social-card sticker"><div class="social-icon line"><i class="ti ti-message-circle"></i></div><div><h4>LINE</h4><p>Printer2020</p></div></a>
+      <a href="tel:0813879064" class="social-card sticker"><div class="social-icon ph"><i class="ti ti-phone"></i></div><div><h4>โทรศัพท์</h4><p>081-387-9064</p></div></a>
     </div>
   </div>
 </div>
@@ -527,36 +599,37 @@ footer a{color:#4da3e8;text-decoration:none}
   </div>
 </div>
 
-<div class="tax-banner">
-  <h2>ออกใบกำกับภาษีได้</h2>
-  <p>รองรับทั้งบุคคลธรรมดาและนิติบุคคล เหมาะสำหรับธุรกิจทุกขนาด</p>
-  <div class="tax-chips">
-    <div class="tax-chip"><i class="ti ti-file-invoice"></i>ใบกำกับภาษี</div>
-    <div class="tax-chip"><i class="ti ti-receipt"></i>ใบเสร็จรับเงิน</div>
-    <div class="tax-chip"><i class="ti ti-building"></i>นิติบุคคล</div>
+<div class="tax-delivery">
+  <div class="td-block sticker filled">
+    <h2>ออกใบกำกับภาษีได้</h2>
+    <p style="color:rgba(255,255,255,0.85)">รองรับทั้งบุคคลธรรมดาและนิติบุคคล เหมาะสำหรับธุรกิจทุกขนาด</p>
+    <div class="td-chips">
+      <div class="tax-chip" style="background:rgba(255,255,255,0.15)"><i class="ti ti-file-invoice"></i>ใบกำกับภาษี</div>
+      <div class="tax-chip" style="background:rgba(255,255,255,0.15)"><i class="ti ti-receipt"></i>ใบเสร็จรับเงิน</div>
+      <div class="tax-chip" style="background:rgba(255,255,255,0.15)"><i class="ti ti-building"></i>นิติบุคคล</div>
+    </div>
+  </div>
+  <div class="td-block sticker">
+    <h2>จัดส่งถึงบ้าน</h2>
+    <p>สั่งได้ ไม่ต้องออกจากบ้าน</p>
+    <div class="td-chips">
+      <div class="delivery-chip"><i class="ti ti-motorbike"></i>Grab</div>
+      <div class="delivery-chip"><i class="ti ti-package"></i>LINE MAN</div>
+      <div class="delivery-chip"><i class="ti ti-message-circle"></i>สั่งผ่าน LINE</div>
+    </div>
   </div>
 </div>
 
-<div class="delivery-section">
-  <div class="section-eyebrow">จัดส่งถึงบ้าน</div>
-  <div class="section-title" style="font-size:22px">สั่งได้ ไม่ต้องออกจากบ้าน</div>
-  <div class="delivery-apps">
-    <div class="delivery-chip"><i class="ti ti-motorbike"></i>Grab</div>
-    <div class="delivery-chip"><i class="ti ti-package"></i>LINE MAN</div>
-    <div class="delivery-chip"><i class="ti ti-message-circle"></i>สั่งผ่าน LINE</div>
-  </div>
-</div>
-
-<div class="contact-section" id="contact">
+<div class="section soft" id="contact">
   <div class="section-eyebrow">ติดต่อเรา</div>
   <div class="section-title">พร้อมช่วยเหลือทุกวัน</div>
   <div class="contact-cards">
-    <div class="contact-card"><div class="contact-icon-wrap"><i class="ti ti-phone"></i></div><div><h4>โทรศัพท์</h4><a href="tel:0813879064">081-387-9064</a></div></div>
-    <div class="contact-card"><div class="contact-icon-wrap"><i class="ti ti-message-circle"></i></div><div><h4>LINE</h4><a href="https://line.me/ti/p/~Printer2020" target="_blank" rel="noopener">Printer2020</a></div></div>
-    <div class="contact-card"><div class="contact-icon-wrap"><i class="ti ti-brand-facebook"></i></div><div><h4>Facebook</h4><a href="https://www.facebook.com/p/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%A9%E0%B8%B1%E0%B8%97%E0%B8%A7%E0%B8%AA%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-100036868253663" target="_blank" rel="noopener">บริษัทวสันต์ปริ้นเตอร์</a></div></div>
-    <div class="contact-card"><div class="contact-icon-wrap"><i class="ti ti-brand-tiktok"></i></div><div><h4>TikTok</h4><a href="https://www.tiktok.com/@wasanprinter" target="_blank" rel="noopener">@wasanprinter</a></div></div>
-    <div class="contact-card"><div class="contact-icon-wrap"><i class="ti ti-clock"></i></div><div><h4>เวลาทำการ</h4><p>09:00 – 19:30 น. เปิดทุกวัน</p></div></div>
-    <div class="contact-card full"><div class="contact-icon-wrap"><i class="ti ti-map-pin"></i></div><div><h4>ที่อยู่</h4><p>อาคาร CM Education Center ห้อง A125/2 เลขที่ 108 ถ.เชียงใหม่-ลำปาง ต.ช้างเผือก อ.เมือง เชียงใหม่ 50300</p></div></div>
+    <div class="contact-card sticker"><div class="contact-icon-wrap"><i class="ti ti-phone"></i></div><div><h4>โทรศัพท์</h4><a href="tel:0813879064">081-387-9064</a></div></div>
+    <div class="contact-card sticker"><div class="contact-icon-wrap"><i class="ti ti-message-circle"></i></div><div><h4>LINE</h4><a href="https://line.me/ti/p/~Printer2020" target="_blank" rel="noopener">Printer2020</a></div></div>
+    <div class="contact-card sticker"><div class="contact-icon-wrap"><i class="ti ti-brand-facebook"></i></div><div><h4>Facebook</h4><a href="https://www.facebook.com/p/%E0%B8%9A%E0%B8%A3%E0%B8%B4%E0%B8%A9%E0%B8%B1%E0%B8%97%E0%B8%A7%E0%B8%AA%E0%B8%B1%E0%B8%99%E0%B8%95%E0%B9%8C%E0%B8%9B%E0%B8%A3%E0%B8%B4%E0%B9%89%E0%B8%99%E0%B9%80%E0%B8%95%E0%B8%AD%E0%B8%A3%E0%B9%8C-100036868253663" target="_blank" rel="noopener">บริษัทวสันต์ปริ้นเตอร์</a></div></div>
+    <div class="contact-card sticker"><div class="contact-icon-wrap"><i class="ti ti-brand-tiktok"></i></div><div><h4>TikTok</h4><a href="https://www.tiktok.com/@wasanprinter" target="_blank" rel="noopener">@wasanprinter</a></div></div>
+    <div class="contact-card sticker"><div class="contact-icon-wrap"><i class="ti ti-clock"></i></div><div><h4>เวลาทำการ</h4><p>09:00 – 19:30 น. เปิดทุกวัน</p></div></div>
+    <div class="contact-card sticker full"><div class="contact-icon-wrap"><i class="ti ti-map-pin"></i></div><div><h4>ที่อยู่</h4><p>อาคาร CM Education Center ห้อง A125/2 เลขที่ 108 ถ.เชียงใหม่-ลำปาง ต.ช้างเผือก อ.เมือง เชียงใหม่ 50300</p></div></div>
   </div>
 </div>
 
@@ -688,7 +761,7 @@ function prevLightbox(){currentLightbox=(currentLightbox-1+lightboxImgs.length)%
 function nextLightbox(){currentLightbox=(currentLightbox+1)%lightboxImgs.length;document.getElementById('lightboxImg').src=lightboxImgs[currentLightbox];}
 document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').classList.contains('open')){if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')prevLightbox();if(e.key==='ArrowRight')nextLightbox();}});
 
-// BOTTOM NAV ACTIVE STATE — ✅ แก้ bug: ใส่ wrapper ให้ถูกต้อง
+// BOTTOM NAV ACTIVE STATE
 window.addEventListener('scroll',()=>{
   const sections=['contact','reviews','products','services'];
   const items=document.querySelectorAll('.bottom-nav-item');

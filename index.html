@@ -132,7 +132,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.9);backdrop-
 .tab-panel.active{display:block}
 .product-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .product-card{padding:14px;display:flex;flex-direction:column;gap:6px;cursor:pointer}
-.product-img{width:100%;height:104px;object-fit:contain;background:var(--bg-soft);border-radius:10px;padding:8px}
+.product-img{width:100%;height:104px;object-fit:contain;background:#fff;border-radius:10px;padding:8px}
 .product-brand{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px}
 .product-name{font-size:13px;font-weight:700;color:var(--ink);line-height:1.3}
 .product-type{display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10px;font-weight:500;padding:3px 9px;border-radius:10px;width:fit-content}
@@ -143,7 +143,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.9);backdrop-
 .sub-label::before{content:'';width:8px;height:8px;background:var(--blue);border-radius:2px}
 .a3-grid{display:grid;grid-template-columns:1fr;gap:14px}
 .a3-card{padding:16px;display:grid;grid-template-columns:96px 1fr;gap:14px;align-items:center;cursor:pointer}
-.a3-card img{width:96px;height:76px;object-fit:contain;background:var(--bg-soft);border-radius:10px;padding:6px}
+.a3-card img{width:96px;height:76px;object-fit:contain;background:#fff;border-radius:10px;padding:6px}
 .a3-info h4{font-size:14px;font-weight:700;color:var(--ink);margin-bottom:4px}
 .a3-info p{font-size:12px;font-weight:300;color:var(--gray);line-height:1.5}
 .ink-group{margin-bottom:20px}
@@ -156,7 +156,7 @@ nav{position:sticky;top:0;z-index:100;background:rgba(255,255,255,0.9);backdrop-
 .dot-both{background:linear-gradient(135deg,var(--ink) 50%,var(--blue) 50%)}
 .paper-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
 .paper-card{padding:14px;display:flex;flex-direction:column;gap:8px}
-.paper-img{width:100%;height:114px;object-fit:contain;background:var(--bg-soft);border-radius:10px;padding:8px}
+.paper-img{width:100%;height:114px;object-fit:contain;background:#fff;border-radius:10px;padding:8px}
 .paper-brand{font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px}
 .paper-name{font-size:13px;font-weight:700;color:var(--ink)}
 .paper-type{display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:10px;font-weight:500;padding:3px 9px;border-radius:10px;width:fit-content}
@@ -289,7 +289,7 @@ footer a{color:#7bb0ff;text-decoration:none}
 .modal{background:#fff;border-radius:22px 22px 0 0;width:100%;max-width:500px;max-height:85vh;overflow-y:auto;padding:24px;position:relative;border:2.5px solid var(--line);border-bottom:none}
 @media(min-width:600px){.modal-overlay{align-items:center}.modal{border-radius:22px;border-bottom:2.5px solid var(--line)}}
 .modal-header{display:flex;align-items:flex-start;gap:16px;margin-bottom:20px}
-.modal-img{width:100px;height:80px;object-fit:contain;background:var(--bg-soft);border-radius:12px;padding:8px;flex-shrink:0}
+.modal-img{width:100px;height:80px;object-fit:contain;background:#fff;border-radius:12px;padding:8px;flex-shrink:0}
 .modal-title{font-size:18px;font-weight:800;color:var(--ink);margin-bottom:4px}
 .modal-brand{font-family:'Space Grotesk',sans-serif;font-size:11px;font-weight:700;color:var(--blue);text-transform:uppercase;letter-spacing:1px;margin-bottom:6px}
 .modal-type{display:inline-flex;align-items:center;gap:4px;background:var(--ink);color:#fff;font-size:11px;font-weight:500;padding:3px 10px;border-radius:10px}
@@ -307,9 +307,60 @@ footer a{color:#7bb0ff;text-decoration:none}
 .float-line{position:fixed;bottom:84px;right:18px;z-index:200;background:#06c755;color:#fff;font-family:'Prompt',sans-serif;font-size:14px;font-weight:700;padding:12px 20px;border-radius:28px;text-decoration:none;display:flex;align-items:center;gap:8px;border:2.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);transition:transform .15s}
 .float-line:hover{transform:translate(-2px,-2px)}
 @media(min-width:769px){.float-line{bottom:24px}}
+
+/* ===== ADDED: MORE ลูกเล่น ===== */
+.progress-bar{position:fixed;top:0;left:0;height:3px;background:var(--blue);z-index:300;width:0%}
+
+.reveal{opacity:0;transform:translateY(26px);transition:opacity .6s ease,transform .6s ease}
+.reveal.in{opacity:1;transform:translateY(0)}
+
+.hero{overflow:hidden}
+.hero>*{position:relative;z-index:1}
+.hero-blob{position:absolute;z-index:0;animation:float 6s ease-in-out infinite}
+.hero-blob.b1{width:110px;height:110px;top:8%;left:3%;background:var(--blue-pale);border-radius:50%}
+.hero-blob.b2{width:60px;height:60px;top:62%;right:5%;background:var(--blue);opacity:.18;border-radius:50%;animation-delay:1.1s}
+.hero-blob.b3{width:40px;height:40px;top:16%;right:12%;border:3px solid var(--ink);border-radius:12px;transform:rotate(18deg);animation-delay:.5s}
+@keyframes float{0%,100%{transform:translateY(0) rotate(0)}50%{transform:translateY(-14px) rotate(10deg)}}
+.scroll-hint{margin-top:30px;display:flex;flex-direction:column;align-items:center;gap:4px;font-family:'Space Grotesk',sans-serif;font-size:10px;font-weight:600;color:var(--gray);letter-spacing:1.5px;text-transform:uppercase}
+.scroll-hint i{animation:bounce 1.6s ease-in-out infinite;font-size:16px;color:var(--blue)}
+@keyframes bounce{0%,100%{transform:translateY(0)}50%{transform:translateY(6px)}}
+
+.quiz-section{padding:52px 20px;background:var(--ink);color:#fff}
+.quiz-section .section-eyebrow{color:#7bb0ff}
+.quiz-section .section-title{color:#fff}
+.quiz-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:18px}
+.quiz-chip{font-family:'Prompt',sans-serif;font-size:13px;font-weight:600;padding:11px 18px;border-radius:20px;border:2.5px solid #fff;background:transparent;color:#fff;cursor:pointer;transition:all .15s}
+.quiz-chip:hover{background:rgba(255,255,255,0.12)}
+.quiz-chip.active{background:var(--blue);border-color:var(--blue)}
+.quiz-result{display:none;background:#fff;color:var(--ink);border-radius:18px;padding:20px;border:2.5px solid var(--line);box-shadow:5px 5px 0 var(--blue);margin-top:4px}
+.quiz-result.show{display:block;animation:popIn .35s ease}
+@keyframes popIn{from{opacity:0;transform:scale(.94) translateY(8px)}to{opacity:1;transform:scale(1) translateY(0)}}
+.quiz-result h4{font-size:15px;font-weight:800;margin-bottom:6px}
+.quiz-result p{font-size:13px;font-weight:300;color:var(--gray);line-height:1.6;margin-bottom:14px}
+
+.bestseller-card:nth-child(1){transform:rotate(-1.4deg)}
+.bestseller-card:nth-child(2){transform:rotate(1deg)}
+.bestseller-card:nth-child(3){transform:rotate(-0.7deg)}
+.bestseller-card:hover{transform:translate(-2px,-2px) rotate(0deg)!important}
+
+.review-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px;scrollbar-width:none}
+.review-carousel::-webkit-scrollbar{display:none}
+.review-carousel .review-card{flex:0 0 82%;scroll-snap-align:center}
+@media(min-width:680px){.review-carousel .review-card{flex:0 0 46%}}
+
+.back-top{position:fixed;bottom:84px;left:18px;z-index:200;background:#fff;color:var(--ink);width:44px;height:44px;border-radius:50%;border:2.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);display:none;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:transform .15s}
+.back-top.show{display:flex}
+.back-top:hover{transform:translate(-2px,-2px)}
+@media(min-width:769px){.back-top{bottom:24px}}
+
+.confetti-piece{position:fixed;z-index:400;pointer-events:none;font-size:18px;animation:confetti-fall .9s ease-out forwards}
+@keyframes confetti-fall{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot))}}
+
+@media(prefers-reduced-motion:reduce){.hero-blob,.scroll-hint i,.marquee{animation:none!important}}
 </style>
 </head>
 <body>
+<div class="progress-bar" id="progressBar"></div>
 
 <nav>
   <div class="nav-logo"><span class="dot"></span>วสันต์ปริ้นเตอร์</div>
@@ -330,6 +381,9 @@ footer a{color:#7bb0ff;text-decoration:none}
 </div>
 
 <div class="hero">
+  <div class="hero-blob b1"></div>
+  <div class="hero-blob b2"></div>
+  <div class="hero-blob b3"></div>
   <div class="hero-badges">
     <div class="hero-badge sticker b1"><i class="ti ti-map-pin"></i> เชียงใหม่</div>
     <div class="hero-badge sticker filled b2">10+ ปี ของจริง</div>
@@ -338,9 +392,10 @@ footer a{color:#7bb0ff;text-decoration:none}
   <div class="hero-sub accent">WASAN PRINTER &amp; SERVICE</div>
   <p>เป็นกันเอง เข้าใจทุกปัญหาเครื่องปริ้น<br>ซ่อมไว ตรงจุด บริการด้วยใจ เหมือนเพื่อน</p>
   <div class="hero-btns">
-    <a href="tel:0813879064" class="btn-primary"><i class="ti ti-phone"></i>081-387-9064</a>
-    <a href="https://line.me/ti/p/~Printer2020" class="btn-secondary" target="_blank" rel="noopener"><i class="ti ti-message-circle"></i>LINE: Printer2020</a>
+    <a href="tel:0813879064" class="btn-primary" onclick="burst(event)"><i class="ti ti-phone"></i>081-387-9064</a>
+    <a href="https://line.me/ti/p/~Printer2020" class="btn-secondary" target="_blank" rel="noopener" onclick="burst(event)"><i class="ti ti-message-circle"></i>LINE: Printer2020</a>
   </div>
+  <div class="scroll-hint">เลื่อนดูเพิ่มเติม<i class="ti ti-chevron-down"></i></div>
 </div>
 
 <div class="marquee-wrap">
@@ -351,10 +406,31 @@ footer a{color:#7bb0ff;text-decoration:none}
 </div>
 
 <div class="stats">
-  <div class="stat-item"><div class="stat-num accent">10+</div><div class="stat-label">ปีประสบการณ์</div></div>
-  <div class="stat-item"><div class="stat-num accent">3</div><div class="stat-label">แบรนด์หลัก</div></div>
-  <div class="stat-item"><div class="stat-num accent">1000+</div><div class="stat-label">ลูกค้าไว้วางใจ</div></div>
-  <div class="stat-item"><div class="stat-num accent">5.0</div><div class="stat-label">คะแนนรีวิว</div></div>
+  <div class="stat-item"><div class="stat-num accent" data-count="10" data-suffix="+">0</div><div class="stat-label">ปีประสบการณ์</div></div>
+  <div class="stat-item"><div class="stat-num accent" data-count="3" data-suffix="">0</div><div class="stat-label">แบรนด์หลัก</div></div>
+  <div class="stat-item"><div class="stat-num accent" data-count="1000" data-suffix="+">0</div><div class="stat-label">ลูกค้าไว้วางใจ</div></div>
+  <div class="stat-item"><div class="stat-num accent" data-count="5" data-decimal="1" data-suffix="">0.0</div><div class="stat-label">คะแนนรีวิว</div></div>
+</div>
+
+<div class="quiz-section">
+  <div class="section-eyebrow">เช็คอาการฟรี</div>
+  <div class="section-title">เครื่องปริ้นเป็นแบบไหน?</div>
+  <div class="section-sub" style="color:rgba(255,255,255,0.6)">กดอาการที่ตรงกับเครื่องคุณ แล้วดูคำแนะนำเบื้องต้นทันที</div>
+  <div class="quiz-chips" id="quizChips">
+    <button class="quiz-chip" data-a="ink">🖨️ พิมพ์ไม่ออก / สีขาด</button>
+    <button class="quiz-chip" data-a="jam">📄 กระดาษติดบ่อย</button>
+    <button class="quiz-chip" data-a="wifi">📶 เชื่อม WiFi ไม่ได้</button>
+    <button class="quiz-chip" data-a="power">⚡ เครื่องไม่ติด</button>
+    <button class="quiz-chip" data-a="noise">🔊 มีเสียงดังผิดปกติ</button>
+  </div>
+  <div class="quiz-result" id="quizResult">
+    <h4 id="quizResultTitle"></h4>
+    <p id="quizResultText"></p>
+    <div class="cta-btns">
+      <button class="cta-btn-w" style="background:var(--blue)" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>ทัก LINE ให้ช่างดูอาการ</button>
+      <button class="cta-btn-t" style="border-color:var(--ink);color:var(--ink)" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทรเลย</button>
+    </div>
+  </div>
 </div>
 
 <div class="section" id="services">
@@ -561,11 +637,17 @@ footer a{color:#7bb0ff;text-decoration:none}
   <div class="section-eyebrow">รีวิวจากลูกค้า</div>
   <div class="section-title">ลูกค้าพูดถึงเรา</div>
   <div class="section-sub">ความประทับใจจากลูกค้าจริง</div>
-  <div class="reviews-grid">
+  <div class="review-carousel" id="reviewCarousel">
     <div class="review-card sticker"><div class="review-stars">★★★★★</div><div class="review-text">บริการดีมาก พนักงานเป็นกันเอง ซ่อมเสร็จไวมาก ราคาโอเค จะมาใช้บริการอีกแน่นอน</div><div class="review-author"><div class="review-avatar">ส</div><div><div class="review-name">สมหญิง ใจดี</div><div class="review-source">Google Maps</div></div></div></div>
     <div class="review-card sticker"><div class="review-stars">★★★★★</div><div class="review-text">แวะมาซื้อหมึก ราคาถูกกว่าที่อื่น มีครบทุกรุ่น พนักงานแนะนำได้ดีมาก ประทับใจมากครับ</div><div class="review-author"><div class="review-avatar">ว</div><div><div class="review-name">วิชัย ประสิทธิ์</div><div class="review-source">Google Maps</div></div></div></div>
     <div class="review-card sticker"><div class="review-stars">★★★★★</div><div class="review-text">เครื่องปริ้นพัง โทรถามแล้วมาส่งซ่อมเลย ตรวจอาการฟรี แจ้งราคาก่อนซ่อม ไม่บวกเพิ่ม ดีมากค่ะ</div><div class="review-author"><div class="review-avatar">น</div><div><div class="review-name">นภา รักษ์ดี</div><div class="review-source">Google Maps</div></div></div></div>
     <div class="review-card sticker"><div class="review-stars">★★★★★</div><div class="review-text">ร้านนี้ดีมาก อธิบายปัญหาให้เข้าใจง่าย ซ่อมเสร็จรวดเร็ว รับประกันงานซ่อมด้วย แนะนำเลย</div><div class="review-author"><div class="review-avatar">ป</div><div><div class="review-name">ปรีชา สุขใจ</div><div class="review-source">Google Maps</div></div></div></div>
+  </div>
+  <div class="slider-dots" id="reviewDots">
+    <div class="slider-dot active" onclick="scrollToReview(0)"></div>
+    <div class="slider-dot" onclick="scrollToReview(1)"></div>
+    <div class="slider-dot" onclick="scrollToReview(2)"></div>
+    <div class="slider-dot" onclick="scrollToReview(3)"></div>
   </div>
   <div class="review-footer">
     <div class="google-badge"><span>⭐ 5.0 · Google Maps</span><a href="https://www.google.com/maps/place/data=!4m2!3m1!1s0x0:0xf1c85a0f68cc3f26" target="_blank" rel="noopener">ดูรีวิวทั้งหมด →</a></div>
@@ -649,6 +731,7 @@ footer a{color:#7bb0ff;text-decoration:none}
   </div>
 </footer>
 
+<button class="back-top" id="backTop" onclick="scrollTop()" aria-label="กลับขึ้นด้านบน"><i class="ti ti-arrow-up"></i></button>
 <a href="https://line.me/ti/p/~Printer2020" class="float-line" target="_blank" rel="noopener"><i class="ti ti-message-circle"></i> LINE หาเรา</a>
 
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
@@ -772,6 +855,100 @@ window.addEventListener('scroll',()=>{
   });
   items.forEach((item,i)=>item.classList.toggle('active',i===(active===0?0:active)));
 });
+
+// SCROLL PROGRESS BAR + BACK TO TOP
+const progressBar=document.getElementById('progressBar');
+const backTop=document.getElementById('backTop');
+window.addEventListener('scroll',()=>{
+  const h=document.documentElement;
+  const scrolled=(h.scrollTop)/(h.scrollHeight-h.clientHeight)*100;
+  if(progressBar)progressBar.style.width=scrolled+'%';
+  if(backTop)backTop.classList.toggle('show',window.scrollY>600);
+});
+
+// SCROLL REVEAL
+const revealTargets=document.querySelectorAll('.section, .products-wrap, .brands-section, .tax-delivery, .map-section, .quiz-section');
+revealTargets.forEach(el=>el.classList.add('reveal'));
+const revealObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revealObs.unobserve(e.target)}});
+},{threshold:0.1});
+revealTargets.forEach(el=>revealObs.observe(el));
+
+// ANIMATED STAT COUNT-UP
+function animateCount(el){
+  const target=parseFloat(el.dataset.count);
+  const suffix=el.dataset.suffix||'';
+  const decimal=parseInt(el.dataset.decimal||'0');
+  const dur=1200;const start=performance.now();
+  function step(now){
+    const p=Math.min((now-start)/dur,1);
+    const val=target*p;
+    el.textContent=(decimal?val.toFixed(decimal):Math.round(val))+suffix;
+    if(p<1)requestAnimationFrame(step);
+  }
+  requestAnimationFrame(step);
+}
+const statObs=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{if(e.isIntersecting){animateCount(e.target);statObs.unobserve(e.target)}});
+},{threshold:0.5});
+document.querySelectorAll('.stat-num[data-count]').forEach(el=>statObs.observe(el));
+
+// SYMPTOM QUIZ
+const quizData={
+  ink:{title:'😮‍💨 น่าจะเป็นปัญหาหัวพิมพ์อุดตันหรือหมึกหมด',text:'ลองเช็คระดับหมึกก่อน ถ้ายังไม่ออกสี อาจต้องล้างหัวพิมพ์หรือเปลี่ยนตลับ ทางร้านตรวจเช็คอาการนี้ให้ฟรี'},
+  jam:{title:'📄 น่าจะเป็นชุดดูดกระดาษสึกหรือมีเศษกระดาษค้าง',text:'ลองเช็คถาดกระดาษและเศษกระดาษที่อาจตกค้างในเครื่องก่อน ถ้ายังติดซ้ำ อาจต้องเปลี่ยนชุดดูดกระดาษ'},
+  wifi:{title:'📶 น่าจะเป็นปัญหาการตั้งค่าเครือข่ายของเครื่อง',text:'ลองรีสตาร์ทเราเตอร์และเครื่องปริ้นใหม่ก่อน ถ้ายังเชื่อมไม่ได้ ทางร้านช่วยตั้งค่าให้ได้ทั้งแบบมาที่ร้านหรือบริการนอกสถานที่'},
+  power:{title:'⚡ น่าจะเป็นปัญหาที่ระบบไฟหรือ Power Supply',text:'เช็คปลั๊กและสายไฟก่อนเบื้องต้น ถ้าเสียบแล้วยังไม่ติด อาจต้องเปลี่ยน Power Supply ซึ่งทางร้านซ่อมได้'},
+  noise:{title:'🔊 น่าจะเป็นชุดกลไกหรือเฟืองภายในสึก',text:'เสียงดังผิดปกติมักมาจากเฟืองหรือแกนหมุนที่สึก ควรให้ช่างตรวจเช็คก่อนใช้งานต่อเพื่อป้องกันความเสียหายเพิ่ม'}
+};
+document.querySelectorAll('.quiz-chip').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.quiz-chip').forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const d=quizData[btn.dataset.a];
+    document.getElementById('quizResultTitle').textContent=d.title;
+    document.getElementById('quizResultText').textContent=d.text;
+    const result=document.getElementById('quizResult');
+    result.classList.add('show');
+    result.scrollIntoView({behavior:'smooth',block:'nearest'});
+  });
+});
+
+// REVIEW CAROUSEL
+const reviewSlider=document.getElementById('reviewCarousel');
+const reviewDots=document.querySelectorAll('#reviewDots .slider-dot');
+if(reviewSlider){
+  reviewSlider.addEventListener('scroll',()=>{
+    const cards=reviewSlider.querySelectorAll('.review-card');
+    const cardWidth=cards[0].offsetWidth+14;
+    const index=Math.round(reviewSlider.scrollLeft/cardWidth);
+    reviewDots.forEach((d,i)=>d.classList.toggle('active',i===index));
+  });
+}
+function scrollToReview(i){
+  const cards=reviewSlider.querySelectorAll('.review-card');
+  reviewSlider.scrollTo({left:i*(cards[0].offsetWidth+14),behavior:'smooth'});
+}
+
+// CONFETTI BURST ON MAIN CTA
+function burst(e){
+  const emojis=['🖨️','✨','🔵','⚡'];
+  for(let i=0;i<10;i++){
+    const p=document.createElement('div');
+    p.className='confetti-piece';
+    p.textContent=emojis[Math.floor(Math.random()*emojis.length)];
+    p.style.left=e.clientX+'px';
+    p.style.top=e.clientY+'px';
+    const dx=(Math.random()-0.5)*160+'px';
+    const dy=(Math.random()*-120-40)+'px';
+    const rot=(Math.random()*360)+'deg';
+    p.style.setProperty('--dx',dx);
+    p.style.setProperty('--dy',dy);
+    p.style.setProperty('--rot',rot);
+    document.body.appendChild(p);
+    setTimeout(()=>p.remove(),1000);
+  }
+}
 </script>
 </body>
 </html>

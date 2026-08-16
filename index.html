@@ -4,7 +4,59 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta name="description" content="วสันต์ ปริ้นเตอร์ แอนด์ เซอร์วิส ซ่อมและขายเครื่องปริ้น Canon Epson Brother ครบวงจร เชียงใหม่ ประสบการณ์กว่า 10 ปี">
+<meta name="theme-color" content="#0057FF">
+<link rel="canonical" href="https://wasant-print.github.io/wasanprinter.github.io/">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230057FF'/%3E%3Ctext x='32' y='44' font-family='Arial,sans-serif' font-weight='900' font-size='34' fill='white' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
 <title>วสันต์ปริ้นเตอร์ แอนด์ เซอร์วิส | เชียงใหม่</title>
+
+<meta property="og:type" content="business.business">
+<meta property="og:locale" content="th_TH">
+<meta property="og:site_name" content="วสันต์ปริ้นเตอร์ แอนด์ เซอร์วิส">
+<meta property="og:title" content="วสันต์ปริ้นเตอร์ แอนด์ เซอร์วิส | เชียงใหม่">
+<meta property="og:description" content="ซ่อมและขายเครื่องปริ้น Canon Epson Brother ครบวงจร เชียงใหม่ ตรวจเช็คอาการฟรี ประสบการณ์กว่า 10 ปี">
+<meta property="og:image" content="https://wasant-print.github.io/wasanprinter.github.io/images/poster_brother_collection.png">
+<meta property="og:url" content="https://wasant-print.github.io/wasanprinter.github.io/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="วสันต์ปริ้นเตอร์ แอนด์ เซอร์วิส | เชียงใหม่">
+<meta name="twitter:description" content="ซ่อมและขายเครื่องปริ้น Canon Epson Brother ครบวงจร เชียงใหม่ ตรวจเช็คอาการฟรี">
+<meta name="twitter:image" content="https://wasant-print.github.io/wasanprinter.github.io/images/poster_brother_collection.png">
+
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ElectronicsStore",
+  "name": "วสันต์ ปริ้นเตอร์ แอนด์ เซอร์วิส",
+  "image": "https://wasant-print.github.io/wasanprinter.github.io/images/poster_brother_collection.png",
+  "telephone": "+66813879064",
+  "priceRange": "฿฿",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "108 ถ.เชียงใหม่-ลำปาง อาคาร CM Education Center ห้อง A125/2",
+    "addressLocality": "ช้างเผือก, เมืองเชียงใหม่",
+    "addressRegion": "เชียงใหม่",
+    "postalCode": "50300",
+    "addressCountry": "TH"
+  },
+  "geo": {
+    "@type": "GeoCoordinates",
+    "latitude": 18.8081,
+    "longitude": 98.9845
+  },
+  "url": "https://wasant-print.github.io/wasanprinter.github.io/",
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "09:00",
+    "closes": "19:30"
+  },
+  "sameAs": [
+    "https://www.facebook.com/p/บริษัทวสันต์ปริ้นเตอร์-100036868253663",
+    "https://www.tiktok.com/@wasanprinter"
+  ]
+}
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@500;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css">
 <script async defer crossorigin="anonymous" src="https://connect.facebook.net/th_TH/sdk.js#xfbml=1&version=v19.0"></script>
@@ -31,6 +83,8 @@ body{font-family:'Prompt',sans-serif;background:var(--bg);color:var(--ink);paddi
 .accent{font-family:'Space Grotesk',sans-serif}
 a{color:inherit}
 :focus-visible{outline:3px solid var(--blue);outline-offset:2px}
+.skip-link{position:absolute;top:-50px;left:8px;background:var(--ink);color:#fff;padding:10px 16px;border-radius:10px;z-index:999;font-size:13px;font-weight:600;text-decoration:none;transition:top .15s}
+.skip-link:focus{top:8px}
 
 /* ---- sticker / brutalist card treatment (signature element) ---- */
 .sticker{border:2.5px solid var(--line);border-radius:18px;background:#fff;box-shadow:5px 5px 0 var(--blue);transition:transform .15s ease, box-shadow .15s ease}
@@ -348,6 +402,16 @@ footer a{color:#7bb0ff;text-decoration:none}
 .review-carousel .review-card{flex:0 0 82%;scroll-snap-align:center}
 @media(min-width:680px){.review-carousel .review-card{flex:0 0 46%}}
 
+/* ---- VIDEO CONTENT UPDATE ---- */
+.video-section{padding:44px 20px;background:var(--bg-soft);border-top:2.5px solid var(--line);border-bottom:2.5px solid var(--line)}
+.video-carousel{display:flex;gap:14px;overflow-x:auto;scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;padding-bottom:6px;scrollbar-width:none}
+.video-carousel::-webkit-scrollbar{display:none}
+.video-card{flex:0 0 76%;scroll-snap-align:center;padding:10px;display:flex;flex-direction:column;align-items:center;gap:8px;background:#fff}
+@media(min-width:600px){.video-card{flex:0 0 32%}}
+.video-card .fb-video{width:100%}
+.video-card .fb-video span,.video-card .fb-video iframe{width:100%!important}
+.video-fallback{font-size:11px;font-weight:600;color:var(--blue);text-decoration:none;display:flex;align-items:center;gap:4px}
+
 .back-top{position:fixed;bottom:84px;left:18px;z-index:200;background:#fff;color:var(--ink);width:44px;height:44px;border-radius:50%;border:2.5px solid var(--ink);box-shadow:4px 4px 0 var(--ink);display:none;align-items:center;justify-content:center;cursor:pointer;font-size:18px;transition:transform .15s}
 .back-top.show{display:flex}
 .back-top:hover{transform:translate(-2px,-2px)}
@@ -356,10 +420,17 @@ footer a{color:#7bb0ff;text-decoration:none}
 .confetti-piece{position:fixed;z-index:400;pointer-events:none;font-size:18px;animation:confetti-fall .9s ease-out forwards}
 @keyframes confetti-fall{0%{opacity:1;transform:translate(0,0) rotate(0)}100%{opacity:0;transform:translate(var(--dx),var(--dy)) rotate(var(--rot))}}
 
+/* ---- VISITOR COUNTER ---- */
+.visitor-wrap{display:flex;justify-content:center;padding:0 20px 40px;background:var(--bg-soft)}
+.visitor-counter{display:inline-flex;align-items:center;gap:8px;padding:10px 18px;font-size:13px;font-weight:600;color:var(--ink);border-radius:20px}
+.visitor-counter i{color:var(--blue);font-size:16px}
+.visitor-counter .accent{color:var(--blue);font-weight:700}
+
 @media(prefers-reduced-motion:reduce){.hero-blob,.scroll-hint i,.marquee{animation:none!important}}
 </style>
 </head>
 <body>
+<a href="#main" class="skip-link">ข้ามไปเนื้อหาหลัก</a>
 <div class="progress-bar" id="progressBar"></div>
 
 <nav>
@@ -380,7 +451,7 @@ footer a{color:#7bb0ff;text-decoration:none}
   </div>
 </div>
 
-<div class="hero">
+<div class="hero" id="main">
   <div class="hero-blob b1"></div>
   <div class="hero-blob b2"></div>
   <div class="hero-blob b3"></div>
@@ -396,6 +467,41 @@ footer a{color:#7bb0ff;text-decoration:none}
     <a href="https://line.me/ti/p/~Printer2020" class="btn-secondary" target="_blank" rel="noopener" onclick="burst(event)"><i class="ti ti-message-circle"></i>LINE: Printer2020</a>
   </div>
   <div class="scroll-hint">เลื่อนดูเพิ่มเติม<i class="ti ti-chevron-down"></i></div>
+</div>
+
+<div class="video-section">
+  <div class="section-eyebrow">Content Update</div>
+  <div class="section-title">คลิปอัปเดตจากร้าน</div>
+  <div class="section-sub">ตามติดเรื่องราวจากวสันต์แบบสดๆ 👇</div>
+  <div class="video-carousel" id="videoCarousel">
+    <div class="video-card sticker">
+      <div class="fb-video" data-href="https://www.facebook.com/reel/2507124759793125" data-width="270" data-show-text="false"></div>
+      <a class="video-fallback" href="https://www.facebook.com/reel/2507124759793125" target="_blank" rel="noopener">ดูคลิปนี้บน Facebook <i class="ti ti-external-link" style="font-size:12px"></i></a>
+    </div>
+    <div class="video-card sticker">
+      <div class="fb-video" data-href="https://www.facebook.com/reel/1676303476814179" data-width="270" data-show-text="false"></div>
+      <a class="video-fallback" href="https://www.facebook.com/reel/1676303476814179" target="_blank" rel="noopener">ดูคลิปนี้บน Facebook <i class="ti ti-external-link" style="font-size:12px"></i></a>
+    </div>
+    <div class="video-card sticker">
+      <div class="fb-video" data-href="https://www.facebook.com/reel/1078963004806143" data-width="270" data-show-text="false"></div>
+      <a class="video-fallback" href="https://www.facebook.com/reel/1078963004806143" target="_blank" rel="noopener">ดูคลิปนี้บน Facebook <i class="ti ti-external-link" style="font-size:12px"></i></a>
+    </div>
+    <div class="video-card sticker">
+      <div class="fb-video" data-href="https://www.facebook.com/reel/1367390084878385" data-width="270" data-show-text="false"></div>
+      <a class="video-fallback" href="https://www.facebook.com/reel/1367390084878385" target="_blank" rel="noopener">ดูคลิปนี้บน Facebook <i class="ti ti-external-link" style="font-size:12px"></i></a>
+    </div>
+    <div class="video-card sticker">
+      <div class="fb-video" data-href="https://www.facebook.com/reel/2280777002699445" data-width="270" data-show-text="false"></div>
+      <a class="video-fallback" href="https://www.facebook.com/reel/2280777002699445" target="_blank" rel="noopener">ดูคลิปนี้บน Facebook <i class="ti ti-external-link" style="font-size:12px"></i></a>
+    </div>
+  </div>
+  <div class="slider-dots" id="videoDots">
+    <div class="slider-dot active" onclick="scrollToVideo(0)"></div>
+    <div class="slider-dot" onclick="scrollToVideo(1)"></div>
+    <div class="slider-dot" onclick="scrollToVideo(2)"></div>
+    <div class="slider-dot" onclick="scrollToVideo(3)"></div>
+    <div class="slider-dot" onclick="scrollToVideo(4)"></div>
+  </div>
 </div>
 
 <div class="marquee-wrap">
@@ -480,23 +586,23 @@ footer a{color:#7bb0ff;text-decoration:none}
     <div class="section-title">เลือกดูได้เลย</div>
     <div class="section-sub">กดที่การ์ดเพื่อดูรายละเอียดเพิ่มเติม 👇</div>
   </div>
-  <div class="tab-nav">
-    <button class="tab-btn active" onclick="switchTab('canon',this)">🖨️ Canon</button>
-    <button class="tab-btn" onclick="switchTab('epson',this)">🖨️ Epson</button>
-    <button class="tab-btn" onclick="switchTab('brother',this)">🖨️ Brother</button>
-    <button class="tab-btn" onclick="switchTab('brothera3',this)">🅰️ Brother A3</button>
-    <button class="tab-btn" onclick="switchTab('ink',this)">🖋️ หมึก &amp; ตลับ</button>
-    <button class="tab-btn" onclick="switchTab('paper',this)">📄 กระดาษ</button>
-    <button class="tab-btn" onclick="switchTab('repair',this)">🔧 งานซ่อม</button>
+  <div class="tab-nav" role="tablist" aria-label="หมวดหมู่สินค้า">
+    <button class="tab-btn active" role="tab" aria-selected="true" onclick="switchTab('canon',this)">🖨️ Canon</button>
+    <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('epson',this)">🖨️ Epson</button>
+    <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('brother',this)">🖨️ Brother</button>
+    <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('brothera3',this)">🅰️ Brother A3</button>
+    <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('ink',this)">🖋️ หมึก &amp; ตลับ</button>
+    <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('paper',this)">📄 กระดาษ</button>
+    <button class="tab-btn" role="tab" aria-selected="false" onclick="switchTab('repair',this)">🔧 งานซ่อม</button>
   </div>
 
-  <div class="tab-panel active" id="tab-canon">
+  <div class="tab-panel active" id="tab-canon" role="tabpanel">
     <div class="sub-label">Inkjet</div>
     <div class="product-grid">
       <div class="product-card sticker" onclick="openModal('canon_g2010')"><img class="product-img" src="images/canon_g2010.jpg" alt="Canon G2010" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">PIXMA G2010</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
       <div class="product-card sticker" onclick="openModal('canon_g3010')"><img class="product-img" src="images/canon_g3010.jpg" alt="Canon G3010" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">PIXMA G3010</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>Inkjet · WiFi</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
       <div class="product-card sticker" onclick="openModal('canon_ix6770')"><img class="product-img" src="images/canon_ix6770.jpg" alt="Canon iX6770" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6770</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card sticker" onclick="openModal('canon_ix6770')"><img class="product-img" src="images/canon_ix6870.jpg" alt="Canon iX6870" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6870</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('canon_ix6870')"><img class="product-img" src="images/canon_ix6870.jpg" alt="Canon iX6870" loading="lazy"><div class="product-brand">Canon</div><div class="product-name">iX6870</div><div class="product-type"><i class="ti ti-file" style="font-size:11px"></i>Inkjet · A3</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
     </div>
     <div class="sub-label">Laser</div>
     <div class="product-grid">
@@ -505,18 +611,18 @@ footer a{color:#7bb0ff;text-decoration:none}
     <div class="cta-bar"><div><p>สนใจสอบถามเพิ่ม?</p><span>มีทั้งใหม่และมือสอง</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
 
-  <div class="tab-panel" id="tab-epson">
+  <div class="tab-panel" id="tab-epson" role="tabpanel">
     <div class="sub-label">Inkjet — EcoTank Series</div>
     <div class="product-grid">
       <div class="product-card sticker" onclick="openModal('epson_l3210')"><img class="product-img" src="images/epson_l3210.jpg" alt="Epson L3210" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L3210</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
-      <div class="product-card sticker" onclick="openModal('epson_l3210')"><img class="product-img" src="images/epson_l3210.jpg" alt="Epson L3216" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L3216</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
+      <div class="product-card sticker" onclick="openModal('epson_l3216')"><img class="product-img" src="images/epson_l3210.jpg" alt="Epson L3216" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L3216</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
       <div class="product-card sticker" onclick="openModal('epson_l3256')"><img class="product-img" src="images/epson_l3256.jpg" alt="Epson L3256" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L3256</div><div class="product-type"><i class="ti ti-wifi" style="font-size:11px"></i>Inkjet · WiFi</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
       <div class="product-card sticker" onclick="openModal('epson_l5290')"><img class="product-img" src="images/epson_l5290.jpg" alt="Epson L5290" loading="lazy"><div class="product-brand">Epson</div><div class="product-name">EcoTank L5290</div><div class="product-type"><i class="ti ti-copy" style="font-size:11px"></i>WiFi · ADF</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
     </div>
     <div class="cta-bar"><div><p>สนใจสอบถามเพิ่ม?</p><span>มีทั้งใหม่และมือสอง</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
 
-  <div class="tab-panel" id="tab-brother">
+  <div class="tab-panel" id="tab-brother" role="tabpanel">
     <div class="sub-label">Inkjet — InkBenefit Tank</div>
     <div class="product-grid">
       <div class="product-card sticker" onclick="openModal('brother_t230')"><img class="product-img" src="images/brother_t230.jpg" alt="Brother T230" loading="lazy"><div class="product-brand">Brother</div><div class="product-name">DCP-T230</div><div class="product-type"><i class="ti ti-droplet" style="font-size:11px"></i>Inkjet · Tank</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
@@ -533,7 +639,7 @@ footer a{color:#7bb0ff;text-decoration:none}
     <div class="cta-bar"><div><p>สนใจสอบถามเพิ่ม?</p><span>มีทั้งใหม่และมือสอง</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
 
-  <div class="tab-panel" id="tab-brothera3">
+  <div class="tab-panel" id="tab-brothera3" role="tabpanel">
     <div class="sub-label">Top Seller — Brother A3 Series</div>
     <div class="a3-grid">
       <div class="a3-card sticker" onclick="openModal('brother_j2340')"><img src="images/brother_t730.jpg" alt="Brother MFC-J2340DW" loading="lazy"><div class="a3-info"><h4>Brother MFC-J2340DW</h4><p>ปริ้น A3 · ถ่ายเอกสาร/สแกน A4 · ถาดใส่กระดาษ 1 ถาด</p><div class="tap-hint" style="justify-content:flex-start;margin-top:6px"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div></div>
@@ -543,7 +649,7 @@ footer a{color:#7bb0ff;text-decoration:none}
     <div class="cta-bar"><div><p>สนใจ Brother A3?</p><span>ติดต่อสอบถามรายละเอียดได้เลย</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
 
-  <div class="tab-panel" id="tab-ink">
+  <div class="tab-panel" id="tab-ink" role="tabpanel">
     <div class="ink-group"><div class="ink-group-title">Canon — ตลับหมึก</div><div class="ink-chips"><div class="ink-chip"><div class="dot dot-black"></div>810 ดำ</div><div class="ink-chip"><div class="dot dot-color"></div>811 สี</div><div class="ink-chip"><div class="dot dot-black"></div>CH7 ดำ</div><div class="ink-chip"><div class="dot dot-color"></div>BH7 สี</div><div class="ink-chip"><div class="dot dot-black"></div>47 ดำ</div><div class="ink-chip"><div class="dot dot-color"></div>57 สี</div></div></div>
     <div class="ink-group"><div class="ink-group-title">HP — ตลับหมึก</div><div class="ink-chips"><div class="ink-chip"><div class="dot dot-both"></div>678 สีและดำ</div><div class="ink-chip"><div class="dot dot-both"></div>680 สีและดำ</div></div></div>
     <div class="ink-group"><div class="ink-group-title">น้ำหมึกเติม — ทุกยี่ห้อ ทุกรุ่น</div><div class="ink-chips"><div class="ink-chip"><div class="dot dot-color"></div>Canon แท้/เทียบ</div><div class="ink-chip"><div class="dot dot-color"></div>Epson แท้/เทียบ</div><div class="ink-chip"><div class="dot dot-color"></div>Brother แท้/เทียบ</div><div class="ink-chip"><div class="dot dot-color"></div>HP แท้/เทียบ</div></div></div>
@@ -551,7 +657,7 @@ footer a{color:#7bb0ff;text-decoration:none}
     <div class="cta-bar"><div><p>สนใจสั่งซื้อ?</p><span>ทั้งปลีกและส่ง มีพร้อมส่ง</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
 
-  <div class="tab-panel" id="tab-paper">
+  <div class="tab-panel" id="tab-paper" role="tabpanel">
     <div class="sub-label">กระดาษ A4 — Idea by SCGP</div>
     <div class="paper-grid">
       <div class="paper-card sticker" onclick="openModal('idea_pack')"><img src="images/idea_pack.jpg" alt="Idea A4 Pack" loading="lazy" class="paper-img"><div class="paper-brand">Idea by SCGP</div><div class="paper-name">Idea Work A4</div><div class="paper-type"><i class="ti ti-stack" style="font-size:11px"></i>Pack · 500 แผ่น</div><div class="product-price">สอบถามราคา</div><div class="tap-hint"><i class="ti ti-info-circle" style="font-size:12px"></i>กดดูรายละเอียด</div></div>
@@ -565,7 +671,7 @@ footer a{color:#7bb0ff;text-decoration:none}
     <div class="cta-bar"><div><p>สั่งกระดาษทั้งปลีกและส่ง</p><span>มีพร้อมส่งทันที</span></div><div class="cta-btns"><button class="cta-btn-w" onclick="window.open('https://line.me/ti/p/~Printer2020','_blank')"><i class="ti ti-message-circle"></i>LINE</button><button class="cta-btn-t" onclick="window.location='tel:0813879064'"><i class="ti ti-phone"></i>โทร</button></div></div>
   </div>
 
-  <div class="tab-panel" id="tab-repair">
+  <div class="tab-panel" id="tab-repair" role="tabpanel">
     <div class="repair-grid">
       <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-droplet"></i></div><div><h4>เติมหมึก</h4><p>เติมหมึกทุกยี่ห้อ ทั้งแท้และเทียบ</p></div></div>
       <div class="repair-card sticker"><div class="repair-icon"><i class="ti ti-replace"></i></div><div><h4>เปลี่ยนตลับหมึก</h4><p>เปลี่ยนตลับ Ink และ Toner ทุกรุ่น</p></div></div>
@@ -616,10 +722,10 @@ footer a{color:#7bb0ff;text-decoration:none}
 </div>
 
 <div class="lightbox" id="lightbox" onclick="closeLightboxOutside(event)">
-  <button class="lightbox-close" onclick="closeLightbox()">✕</button>
-  <button class="lightbox-prev" onclick="prevLightbox()">‹</button>
+  <button class="lightbox-close" onclick="closeLightbox()" aria-label="ปิดรูปภาพ">✕</button>
+  <button class="lightbox-prev" onclick="prevLightbox()" aria-label="รูปก่อนหน้า">‹</button>
   <img id="lightboxImg" src="" alt="">
-  <button class="lightbox-next" onclick="nextLightbox()">›</button>
+  <button class="lightbox-next" onclick="nextLightbox()" aria-label="รูปถัดไป">›</button>
 </div>
 
 <div class="section">
@@ -717,8 +823,12 @@ footer a{color:#7bb0ff;text-decoration:none}
 
 <div class="map-section">
   <div class="map-wrap">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.6!2d98.9845!3d18.8081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf1c85a0f68cc3f26!2z4Lia4Lij4Li04Lip4Lix4LiX!5e0!3m2!1sth!2sth!4v1" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3775.6!2d98.9845!3d18.8081!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xf1c85a0f68cc3f26!2z4Lia4Lij4Li04Lip4Lix4LiX!5e0!3m2!1sth!2sth!4v1" title="แผนที่ที่ตั้งร้านวสันต์ปริ้นเตอร์" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
+</div>
+
+<div class="visitor-wrap">
+  <div class="visitor-counter sticker"><i class="ti ti-eye"></i> เข้าชมเว็บไซต์แล้ว <span class="accent" id="visitorCount">…</span> ครั้ง</div>
 </div>
 
 <footer>
@@ -736,7 +846,7 @@ footer a{color:#7bb0ff;text-decoration:none}
 
 <div class="modal-overlay" id="modalOverlay" onclick="closeModalOutside(event)">
   <div class="modal" id="modalContent">
-    <button class="modal-close" onclick="closeModal()">✕</button>
+    <button class="modal-close" onclick="closeModal()" aria-label="ปิดหน้าต่างรายละเอียดสินค้า">✕</button>
     <div class="modal-header">
       <img id="modalImg" src="" alt="" class="modal-img">
       <div><div id="modalBrand" class="modal-brand"></div><div id="modalTitle" class="modal-title"></div><div id="modalType" class="modal-type"></div></div>
@@ -754,8 +864,10 @@ const products = {
   canon_g2010:{brand:'Canon',name:'PIXMA G2010',type:'Inkjet · Tank System',img:'images/canon_g2010.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้น · สแกน · ถ่ายเอกสาร'},{k:'ความเร็วพิมพ์ขาวดำ',v:'8.8 แผ่น/นาที'},{k:'ความเร็วพิมพ์สี',v:'5.0 แผ่น/นาที'},{k:'ความละเอียดพิมพ์',v:'4800 × 1200 dpi'},{k:'ความละเอียดสแกน',v:'600 × 1200 dpi'},{k:'WiFi',v:'ไม่มี'},{k:'จุดเด่น',v:'ใช้งานง่าย ประหยัดหมึก เหมาะบ้านและออฟฟิศเล็ก'},{k:'รับประกัน',v:'2 ปี หรือ 30,000 แผ่น'}]},
   canon_g3010:{brand:'Canon',name:'PIXMA G3010',type:'Inkjet · Tank System · WiFi',img:'images/canon_g3010.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้น · สแกน · ถ่ายเอกสาร'},{k:'ความเร็วพิมพ์ขาวดำ',v:'8.8 แผ่น/นาที'},{k:'ความเร็วพิมพ์สี',v:'5.0 แผ่น/นาที'},{k:'ความละเอียดพิมพ์',v:'4800 × 1200 dpi'},{k:'WiFi',v:'✅ มี · AirPrint · Mopria'},{k:'จุดเด่น',v:'คุณภาพงานพิมพ์ดี เหมาะบ้านและร้านเล็ก มือใหม่ก็ใช้ได้'},{k:'รับประกัน',v:'2 ปี หรือ 15,000 แผ่น'}]},
   canon_lbp6030:{brand:'Canon',name:'LBP6030',type:'Laser · Mono',img:'images/canon_lbp6030.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้นขาวดำ'},{k:'ความเร็วพิมพ์',v:'18 แผ่น/นาที'},{k:'ความละเอียดพิมพ์',v:'600 × 600 dpi'},{k:'WiFi',v:'ไม่มี'},{k:'จุดเด่น',v:'ขนาดกะทัดรัด ประหยัดหมึก เหมาะใช้งานที่บ้าน'}]},
-  canon_ix6770:{brand:'Canon',name:'PIXMA iX6770/iX6870',type:'Inkjet · A3',img:'images/canon_ix6770.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้นสีและขาวดำ'},{k:'ขนาดกระดาษ',v:'ปริ้นได้ถึง A3'},{k:'ความละเอียดพิมพ์',v:'9600 × 2400 dpi'},{k:'WiFi',v:'ไม่มี'},{k:'จุดเด่น',v:'ปริ้น A3 คุณภาพสูง เหมาะงานกราฟิกและภาพขนาดใหญ่'}]},
-  epson_l3210:{brand:'Epson',name:'EcoTank L3210/L3216',type:'Inkjet · Tank System',img:'images/epson_l3210.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้น · สแกน · ถ่ายเอกสาร'},{k:'ความเร็วพิมพ์ขาวดำ',v:'10 แผ่น/นาที'},{k:'ความเร็วพิมพ์สี',v:'5 แผ่น/นาที'},{k:'ความละเอียดพิมพ์',v:'5760 × 1440 dpi'},{k:'WiFi',v:'ไม่มี'},{k:'จุดเด่น',v:'รุ่นยอดฮิตของโรงเรียน ขนาดกะทัดรัด'},{k:'รับประกัน',v:'2 ปี หรือ 30,000 แผ่น'}]},
+  canon_ix6770:{brand:'Canon',name:'PIXMA iX6770',type:'Inkjet · A3',img:'images/canon_ix6770.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้นสีและขาวดำ'},{k:'ขนาดกระดาษ',v:'ปริ้นได้ถึง A3'},{k:'ความละเอียดพิมพ์',v:'9600 × 2400 dpi'},{k:'WiFi',v:'ไม่มี'},{k:'จุดเด่น',v:'ปริ้น A3 คุณภาพสูง เหมาะงานกราฟิกและภาพขนาดใหญ่'}]},
+  canon_ix6870:{brand:'Canon',name:'PIXMA iX6870',type:'Inkjet · A3',img:'images/canon_ix6870.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้นสีและขาวดำ'},{k:'ขนาดกระดาษ',v:'ปริ้นได้ถึง A3'},{k:'ความละเอียดพิมพ์',v:'9600 × 2400 dpi'},{k:'WiFi',v:'ไม่มี'},{k:'จุดเด่น',v:'รุ่นต่อยอดจาก iX6770 ปริ้น A3 คุณภาพสูง เหมาะงานกราฟิกและภาพขนาดใหญ่'}]},
+  epson_l3210:{brand:'Epson',name:'EcoTank L3210',type:'Inkjet · Tank System',img:'images/epson_l3210.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้น · สแกน · ถ่ายเอกสาร'},{k:'ความเร็วพิมพ์ขาวดำ',v:'10 แผ่น/นาที'},{k:'ความเร็วพิมพ์สี',v:'5 แผ่น/นาที'},{k:'ความละเอียดพิมพ์',v:'5760 × 1440 dpi'},{k:'WiFi',v:'ไม่มี'},{k:'จุดเด่น',v:'รุ่นยอดฮิตของโรงเรียน ขนาดกะทัดรัด'},{k:'รับประกัน',v:'2 ปี หรือ 30,000 แผ่น'}]},
+  epson_l3216:{brand:'Epson',name:'EcoTank L3216',type:'Inkjet · Tank System',img:'images/epson_l3210.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้น · สแกน · ถ่ายเอกสาร'},{k:'ความเร็วพิมพ์ขาวดำ',v:'10 แผ่น/นาที'},{k:'ความเร็วพิมพ์สี',v:'5 แผ่น/นาที'},{k:'ความละเอียดพิมพ์',v:'5760 × 1440 dpi'},{k:'WiFi',v:'ไม่มี'},{k:'จุดเด่น',v:'รุ่นต่อยอดจาก L3210 ขนาดกะทัดรัด เหมาะบ้านและนักเรียน'},{k:'รับประกัน',v:'2 ปี หรือ 30,000 แผ่น'}]},
   epson_l3250:{brand:'Epson',name:'EcoTank L3250',type:'Inkjet · Tank System · WiFi',img:'images/epson_l3250.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้น · สแกน · ถ่ายเอกสาร'},{k:'ความเร็วพิมพ์ขาวดำ',v:'10.5 แผ่น/นาที'},{k:'ความเร็วพิมพ์สี',v:'5.0 แผ่น/นาที'},{k:'ความละเอียดสแกน',v:'2400 × 1200 dpi'},{k:'WiFi',v:'✅ มี · AirPrint · Mopria'},{k:'จุดเด่น',v:'สแกนคมกว่า Canon งานสีสด'},{k:'รับประกัน',v:'2 ปี หรือ 30,000 แผ่น'}]},
   epson_l3256:{brand:'Epson',name:'EcoTank L3256',type:'Inkjet · WiFi',img:'images/epson_l3256.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้น · สแกน · ถ่ายเอกสาร'},{k:'ความเร็วพิมพ์ขาวดำ',v:'10 แผ่น/นาที'},{k:'ความละเอียดพิมพ์',v:'5760 × 1440 dpi'},{k:'WiFi',v:'✅ มี'},{k:'จุดเด่น',v:'WiFi ราคาประหยัด เหมาะบ้านและนักเรียน'}]},
   epson_l5290:{brand:'Epson',name:'EcoTank L5290',type:'Inkjet · WiFi · ADF',img:'images/epson_l5290.jpg',specs:[{k:'ฟังก์ชัน',v:'ปริ้น · สแกน · ถ่ายเอกสาร · แฟกซ์'},{k:'ความเร็วพิมพ์ขาวดำ',v:'33 แผ่น/นาที'},{k:'ความเร็วพิมพ์สี',v:'15 แผ่น/นาที'},{k:'ความละเอียดพิมพ์',v:'5760 × 1440 dpi'},{k:'WiFi',v:'✅ มี · WiFi Direct · LAN'},{k:'ADF',v:'✅ สแกนได้ทีละ 30 แผ่น'},{k:'จอ LED',v:'✅ มี'},{k:'จุดเด่น',v:'ปริ้นสวย สีคม มีจอ LED เหมาะสำนักงาน'}]},
@@ -792,9 +904,10 @@ function closeModal(){document.getElementById('modalOverlay').classList.remove('
 function closeModalOutside(e){if(e.target===document.getElementById('modalOverlay'))closeModal();}
 
 function switchTab(id,btn){
-  document.querySelectorAll('.tab-btn').forEach(b=>b.classList.remove('active'));
+  document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');b.setAttribute('aria-selected','false');});
   document.querySelectorAll('.tab-panel').forEach(p=>p.classList.remove('active'));
   btn.classList.add('active');
+  btn.setAttribute('aria-selected','true');
   document.getElementById('tab-'+id).classList.add('active');
 }
 
@@ -843,6 +956,7 @@ function closeLightboxOutside(e){if(e.target===document.getElementById('lightbox
 function prevLightbox(){currentLightbox=(currentLightbox-1+lightboxImgs.length)%lightboxImgs.length;document.getElementById('lightboxImg').src=lightboxImgs[currentLightbox];}
 function nextLightbox(){currentLightbox=(currentLightbox+1)%lightboxImgs.length;document.getElementById('lightboxImg').src=lightboxImgs[currentLightbox];}
 document.addEventListener('keydown',e=>{if(document.getElementById('lightbox').classList.contains('open')){if(e.key==='Escape')closeLightbox();if(e.key==='ArrowLeft')prevLightbox();if(e.key==='ArrowRight')nextLightbox();}});
+document.addEventListener('keydown',e=>{if(e.key==='Escape'&&document.getElementById('modalOverlay').classList.contains('open'))closeModal();});
 
 // BOTTOM NAV ACTIVE STATE
 window.addEventListener('scroll',()=>{
@@ -867,7 +981,7 @@ window.addEventListener('scroll',()=>{
 });
 
 // SCROLL REVEAL
-const revealTargets=document.querySelectorAll('.section, .products-wrap, .brands-section, .tax-delivery, .map-section, .quiz-section');
+const revealTargets=document.querySelectorAll('.section, .products-wrap, .brands-section, .tax-delivery, .map-section, .quiz-section, .video-section');
 revealTargets.forEach(el=>el.classList.add('reveal'));
 const revealObs=new IntersectionObserver((entries)=>{
   entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');revealObs.unobserve(e.target)}});
@@ -929,6 +1043,41 @@ function scrollToReview(i){
   const cards=reviewSlider.querySelectorAll('.review-card');
   reviewSlider.scrollTo({left:i*(cards[0].offsetWidth+14),behavior:'smooth'});
 }
+
+// VIDEO CAROUSEL
+const videoSlider=document.getElementById('videoCarousel');
+const videoDots=document.querySelectorAll('#videoDots .slider-dot');
+if(videoSlider){
+  videoSlider.addEventListener('scroll',()=>{
+    const cards=videoSlider.querySelectorAll('.video-card');
+    const cardWidth=cards[0].offsetWidth+14;
+    const index=Math.round(videoSlider.scrollLeft/cardWidth);
+    videoDots.forEach((d,i)=>d.classList.toggle('active',i===index));
+  });
+}
+function scrollToVideo(i){
+  const cards=videoSlider.querySelectorAll('.video-card');
+  videoSlider.scrollTo({left:i*(cards[0].offsetWidth+14),behavior:'smooth'});
+}
+
+// VISITOR COUNTER
+(function(){
+  const el=document.getElementById('visitorCount');
+  if(!el)return;
+  fetch('https://api.countapi.xyz/hit/wasanprinter-cnx/homepage')
+    .then(r=>r.json())
+    .then(data=>{
+      const target=data.value;
+      const dur=1000;const start=performance.now();
+      function step(now){
+        const p=Math.min((now-start)/dur,1);
+        el.textContent=Math.round(target*p).toLocaleString('th-TH');
+        if(p<1)requestAnimationFrame(step);
+      }
+      requestAnimationFrame(step);
+    })
+    .catch(()=>{el.textContent='—';});
+})();
 
 // CONFETTI BURST ON MAIN CTA
 function burst(e){
